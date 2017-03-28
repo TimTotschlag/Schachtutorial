@@ -38,6 +38,11 @@ public class regisController {
 
     	} catch(Exception fehl){
     		Pane fehlPane = (Pane) FXMLLoader.load(Main.class.getResource("regisfehlge.fxml"));
+    		Stage fehlStage = new Stage();
+    		fehlStage.setScene(new Scene(fehlPane));
+    		fehlStage.show();
+    		fehlStage.setResizable(false);
+    		
     	}
     }
 
