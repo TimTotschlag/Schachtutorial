@@ -27,7 +27,8 @@ public class regisController {
     	passwort = regispasswort.getText();
     	Datenbank.createTable();
     	Datenbank.post(benutzer, passwort);
-
+    	abbrechen(event);
+    	
     	try{
     	Pane erfolgPane = (Pane) FXMLLoader.load(Main.class.getResource("regiserfolg.fxml"));
     	Stage erfolgStage = new Stage();
