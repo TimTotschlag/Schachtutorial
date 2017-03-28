@@ -28,13 +28,14 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Pane mainPane = (Pane) FXMLLoader.load(Main.class.getResource("Anmeldefenster.fxml")); //l‰d die fxml Datei an welches die Daten des Fensters enth‰lt
+		Pane mainPane = (Pane) FXMLLoader.load(Main.class.getResource("Anmeldefenster.fxml")); //l√§d die fxml Datei an welches die Daten des Fensters enth√§lt
 		primaryStage.setScene(new Scene(mainPane)); //erstellt das Fenster
 		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
-		primaryStage.setResizable(false); //Die grˆﬂe des Fensters kann nicht ver‰ndert werden
+		primaryStage.setResizable(false); //Die gr√∂√üe des Fensters kann nicht ver√§ndert werden
 		primaryStage.setTitle("Sachtutorial");
 		
 		//test
+		//test2
 	}
 
 
