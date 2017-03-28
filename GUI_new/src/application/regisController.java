@@ -35,9 +35,11 @@ public class regisController {
     	erfolgStage.setScene(new Scene(erfolgPane));
     	erfolgStage.show();
     	erfolgStage.setResizable(false);
+    	Thread.sleep(3000);  //vorgang pausiert für 3 sekunden
+    	erfolgStage.close();  //beendet das fenster
 
     	} catch(Exception fehl){
-    		Pane fehlPane = (Pane) FXMLLoader.load(Main.class.getResource("regisfehlge.fxml"));
+    		Pane fehlPane = (Pane) FXMLLoader.load(Main.class.getResource("regisfehlg.fxml"));
     		Stage fehlStage = new Stage();
     		fehlStage.setScene(new Scene(fehlPane));
     		fehlStage.show();

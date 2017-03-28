@@ -11,7 +11,6 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 
 	public static void main(String[] args)throws Exception {
-		System.out.println("Hallo MainMain");
 		Application.launch(args);
 
 
