@@ -10,10 +10,7 @@ import java.util.ArrayList;
 
 public class Datenbank {
 
-	public static void main(String[] args) throws Exception {
-
-	}
-
+	
 	public static ArrayList<String> get() throws Exception {
 		try {
 			Connection con = getConnection();
