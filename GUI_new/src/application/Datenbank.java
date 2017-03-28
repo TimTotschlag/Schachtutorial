@@ -52,7 +52,7 @@ public class Datenbank {
 				//calls out what the MySQL database error is
 				System.out.println(e);
 			}
-			//return nothing if we got an error
+			//return nothing if we got errors
 			return null;
 		}
 
