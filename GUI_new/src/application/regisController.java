@@ -28,7 +28,6 @@ public class regisController {
     	Datenbank.createTable();
     	Datenbank.post(benutzer, passwort);
     	abbrechen(event);
-    	
     	try{
     	Pane erfolgPane = (Pane) FXMLLoader.load(Main.class.getResource("regiserfolg.fxml"));
     	Stage erfolgStage = new Stage();
@@ -44,7 +43,7 @@ public class regisController {
     		fehlStage.setScene(new Scene(fehlPane));
     		fehlStage.show();
     		fehlStage.setResizable(false);
-    		
+
     	}
     }
 
