@@ -115,7 +115,7 @@ public class Datenbank {
 					//prints out a space between username and password
 					System.out.print(" ");
 					
-					//prints out password
+					//prints out passwords
 					System.out.println(result.getString("password"));
 
 					array.add(result.getString("password"));
