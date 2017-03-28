@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="226.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.anmeldeController">
+   <children>
+      <Label layoutX="97.0" layoutY="14.0" text="Schachtutorial">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <VBox layoutX="142.0" layoutY="73.0" prefHeight="50.0" prefWidth="166.0">
+         <children>
+            <TextField fx:id="benutzer" prefHeight="25.0" prefWidth="148.0" promptText="Benutzer" />
+            <PasswordField fx:id="passwort" promptText="Passwort" />
+         </children>
+      </VBox>
+      <HBox layoutX="142.0" layoutY="123.0" prefHeight="25.0" prefWidth="166.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#anmelden" prefHeight="25.0" prefWidth="107.0" text="anmelden" />
+            <Button mnemonicParsing="false" onAction="#registrieren" prefHeight="25.0" prefWidth="107.0" text="registrieren" />
+         </children>
+      </HBox>
+      <HBox layoutX="349.0" layoutY="187.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#info" text="?" />
+            <Button layoutX="448.0" layoutY="14.0" mnemonicParsing="false" onAction="#verlassen" text="verlassen" />
+         </children>
+      </HBox>
+   </children>
+</Pane>
