@@ -23,7 +23,6 @@ public class regisController {
 
     @FXML
     void regis(ActionEvent event) throws Exception {
-//      void regis(ActionEvent event){
     	benutzer = regisname.getText();
     	passwort = regispasswort.getText();
     	Datenbank.createTable();

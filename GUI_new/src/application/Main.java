@@ -21,7 +21,7 @@ public class Main extends Application {
 	public static void main(String[] args)throws Exception {
 		System.out.println("Hallo MainMain");
 		Application.launch(args);
-//		Datenbank.getConnection();
+
 
 	}
 
@@ -34,9 +34,6 @@ public class Main extends Application {
 		primaryStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
 		primaryStage.setTitle("Sachtutorial");
 		
-		//test
-		//test2
-		//test3
 	}
 
 

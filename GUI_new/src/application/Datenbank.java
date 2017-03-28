@@ -11,9 +11,7 @@ import java.util.ArrayList;
 public class Datenbank {
 
 	public static void main(String[] args) throws Exception {
-//		 createTable();
-//		 post();
-//		 get();
+
 	}
 
 	public static ArrayList<String> get() throws Exception {
@@ -49,8 +47,6 @@ public class Datenbank {
 			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
 			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
 			// PreparedStatement posted = con.prepareStatement("INSERT INTO
-			// logindaten (username, password) VALUES ('"+var1+"',
-			// SHA1('"+var2+"'))");
 			PreparedStatement posted = con.prepareStatement("INSERT INTO logindaten (username, password) VALUES ('" + var1 + "', SHA1('" + var2 + "'))");
 			posted.executeUpdate();
 		} catch (Exception e) {
@@ -65,13 +61,11 @@ public class Datenbank {
 			Connection con = getConnection();
 			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id))");
 			create.executeUpdate();
-			System.out.println("testTableMethode");
 
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			System.out.println("HalloCreateTable");
-			System.out.println("Function Complete.");
+			System.out.println("Tabelle erstellt");
 		}
 	}
 
@@ -85,7 +79,7 @@ public class Datenbank {
 			Class.forName(driver);
 
 			Connection conn = DriverManager.getConnection(url, username, password);
-			System.out.println("Connected");
+			System.out.println("Datenbank Verbunden");
 			return conn;
 		} catch (Exception e) {
 			System.out.println(e);
