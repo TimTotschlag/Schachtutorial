@@ -132,7 +132,7 @@ public class Datenbank {
 				//prints out the error message from the MySQL database
 				System.out.println(e);
 			}
-			//the method return nothing if we have an errors
+			//the method return nothing if we have an error
 			return null;
 
 		}
