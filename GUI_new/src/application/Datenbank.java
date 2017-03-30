@@ -13,7 +13,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 //MySQL Library to give out the Table as Array List
-import java.util.ArrayList; 
+import java.util.ArrayList;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage; 
 
 //start with the Database class, 4 methods 
 public class Datenbank {
@@ -83,8 +88,26 @@ public class Datenbank {
 			// PreparedStatement posted = con.prepareStatement("INSERT INTO
 			PreparedStatement posted = con.prepareStatement("INSERT INTO logindaten (username, password) VALUES ('" + var1 + "', SHA1('" + var2 + "'))");
 			posted.executeUpdate();
+			//Fenster erstellen
+			Pane erfolgPane = (Pane) FXMLLoader.load(Main.class.getResource("regiserfolg.fxml"));
+	    	Stage erfolgStage = new Stage();
+	    	erfolgStage.setScene(new Scene(erfolgPane));
+	    	erfolgStage.show();
+	    	erfolgStage.setResizable(false);
+	    	Thread.sleep(3000);  //vorgang pausiert für 3 sekunden
+	    	erfolgStage.close();  //beendet das fenster
+	    	//fenster ende
 		} catch (Exception e) {
 			System.out.println(e);
+			//fenster erstellen
+			Pane fehlPane = (Pane) FXMLLoader.load(Main.class.getResource("regisfehlg.fxml"));
+    		Stage fehlStage = new Stage();
+    		fehlStage.setScene(new Scene(fehlPane));
+    		fehlStage.show();
+    		fehlStage.setResizable(false);
+    		Thread.sleep(3000);
+    		fehlStage.close();
+    		//Fenster ende
 		} finally {
 			System.out.println("Eingabe erfolgreich");
 		}
