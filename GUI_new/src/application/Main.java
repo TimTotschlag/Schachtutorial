@@ -12,6 +12,7 @@ public class Main extends Application {
 
 	public static void main(String[] args)throws Exception {
 //		Datenbank.ueberpruefen();
+		System.out.println("so");
 		Application.launch(args);
 
 	}

@@ -171,4 +171,42 @@ public class Datenbank {
 		}
 		return passwordcheck;
 	}
+	public static String getoriginalpassword(String user) throws Exception {
+		try {
+			String var1 = user;
+			//call the method getConnection() to make sure that we are connected to the database
+			Connection con = getConnection();
+
+			//a prepared statement that allows us to use MySQL commands as a String, here we use a Select Statement to get username and password from the table logindaten
+			PreparedStatement statement = con.prepareStatement("SELECT password FROM logindaten WHERE username = '" + var1 + "'");
+
+			//gives out results as long as there are all given out
+			ResultSet result = statement.executeQuery();
+
+			//creates a new String Array for username and password
+			String originalpassword = new String();
+			System.out.println("HI" + originalpassword);
+			//as long as we have results give out the next results
+			while (result.next()) {
+
+				//prints out username
+				System.out.print(result.getString("originalpassword"));
+
+			}
+			//prints out that all information are repeated if all information are repeated
+			System.out.println("Alle Inhalte wurden wiedergegeben");
+
+			//return the array list with username and passwords
+			return originalpassword;
+
+		//if something goes wrong he get the errors from the MySQL database
+		} catch (Exception e) {
+
+			//prints out the error message from the MySQL database
+			System.out.println(e);
+		}
+		//the method return nothing if we have an error
+		return null;
+
+	}
 }

@@ -21,9 +21,14 @@ public class anmeldeController {
     @FXML
     void anmelden(ActionEvent event) throws Exception {
 //    	System.out.println("Benutzer: " + benutzer.getText() + "\nPasswort: " + passwort.getText());
+    	String user = benutzer.getText();
     	String pass = passwort.getText();
     	String checkpass = Datenbank.ueberpruefen(pass);
-    	if(pass == checkpass){
+    	System.out.println(checkpass);
+    	String richtigespass = Datenbank.getoriginalpassword(user);
+    	System.out.println(richtigespass);
+
+    	if(richtigespass == checkpass){
     		System.out.println("funzt");
     	}
     	else {
