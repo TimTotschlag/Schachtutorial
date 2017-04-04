@@ -13,7 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 //MySQL Library to give out the Table as Array List
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -133,11 +133,11 @@ public class Datenbank {
 				while (result.next()) {
 
 					//prints out username
-					System.out.print(result.getString("passwordcheck"));
+					passwordcheck = (result.getString("passwordcheck"));
 
 				}
 				//prints out that all information are repeated if all information are repeated
-				System.out.println("Alle Inhalte wurden wiedergegeben");
+				//System.out.println("Alle Inhalte wurden wiedergegeben");
 
 				//return the array list with username and passwords
 				return passwordcheck;
@@ -153,24 +153,23 @@ public class Datenbank {
 
 		}
 
-	public static String ueberpruefen(String pass) throws Exception{
+	public static void ueberpruefen(String pass) throws Exception{
 		final String var2 = pass;
-		String passwordcheck = "";
 		try {
 			Connection con = getConnection();
 			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
 			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
 			// PreparedStatement posted = con.prepareStatement("INSERT INTO
 			PreparedStatement posted = con.prepareStatement("INSERT INTO ueberpruefung (passwordcheck) VALUES (SHA1('" + var2 + "'))");
-			passwordcheck = get();
 			posted.executeUpdate();
 
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return passwordcheck;
+		
 	}
+	
 	public static String getoriginalpassword(String user) throws Exception {
 		try {
 			String var1 = user;
@@ -178,26 +177,29 @@ public class Datenbank {
 			Connection con = getConnection();
 
 			//a prepared statement that allows us to use MySQL commands as a String, here we use a Select Statement to get username and password from the table logindaten
-			PreparedStatement statement = con.prepareStatement("SELECT password FROM logindaten WHERE username = '" + var1 + "'");
+			PreparedStatement statement = con.prepareStatement("SELECT password FROM logindaten WHERE username = ('" + var1 + "')");
 
 			//gives out results as long as there are all given out
 			ResultSet result = statement.executeQuery();
 
 			//creates a new String Array for username and password
-			String originalpassword = new String();
-			System.out.println("HI" + originalpassword);
+			String wichtig = new String();
+			
+//			System.out.println("HI");
 			//as long as we have results give out the next results
 			while (result.next()) {
 
 				//prints out username
-				System.out.print(result.getString("originalpassword"));
-
+				wichtig = (result.getString("password"));
+				
 			}
 			//prints out that all information are repeated if all information are repeated
-			System.out.println("Alle Inhalte wurden wiedergegeben");
+			//System.out.println("Alle Inhalte wurden wiedergegeben");
 
+			
+			
 			//return the array list with username and passwords
-			return originalpassword;
+			return wichtig;
 
 		//if something goes wrong he get the errors from the MySQL database
 		} catch (Exception e) {
@@ -208,5 +210,22 @@ public class Datenbank {
 		//the method return nothing if we have an error
 		return null;
 
+	}
+	
+	public static void pruefinhaltloeschen() throws Exception{
+	
+		try {
+			Connection con = getConnection();
+			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
+			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
+			// PreparedStatement posted = con.prepareStatement("INSERT INTO
+			PreparedStatement posted = con.prepareStatement("TRUNCATE TABLE `ueberpruefung`");
+			posted.executeUpdate();
+
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 	}
 }
