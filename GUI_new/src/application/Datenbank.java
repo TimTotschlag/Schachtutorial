@@ -115,39 +115,32 @@ public class Datenbank {
 
 
 	//method that gives out the stored information from the table "logindaten" from the database "schachbenutzer"
-	public static ArrayList<String> get() throws Exception {
+	public static String get() throws Exception {
 			try {
 				//call the method getConnection() to make sure that we are connected to the database
 				Connection con = getConnection();
 
 				//a prepared statement that allows us to use MySQL commands as a String, here we use a Select Statement to get username and password from the table logindaten
-				PreparedStatement statement = con.prepareStatement("SELECT username, password FROM logindaten");
+				PreparedStatement statement = con.prepareStatement("SELECT passwordcheck FROM ueberpruefung");
 
 				//gives out results as long as there are all given out
 				ResultSet result = statement.executeQuery();
 
 				//creates a new String Array for username and password
-				ArrayList<String> array = new ArrayList<String>();
+				String passwordcheck = new String();
 
 				//as long as we have results give out the next results
 				while (result.next()) {
 
 					//prints out username
-					System.out.print(result.getString("username"));
+					System.out.print(result.getString("passwordcheck"));
 
-					//prints out a space between username and password
-					System.out.print(" ");
-
-					//prints out passwords
-					System.out.println(result.getString("password"));
-
-					array.add(result.getString("password"));
 				}
 				//prints out that all information are repeated if all information are repeated
 				System.out.println("Alle Inhalte wurden wiedergegeben");
 
 				//return the array list with username and passwords
-				return array;
+				return passwordcheck;
 
 			//if something goes wrong he get the errors from the MySQL database
 			} catch (Exception e) {
@@ -159,4 +152,23 @@ public class Datenbank {
 			return null;
 
 		}
+
+	public static String ueberpruefen(String pass) throws Exception{
+		final String var2 = pass;
+		String passwordcheck = "";
+		try {
+			Connection con = getConnection();
+			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
+			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
+			// PreparedStatement posted = con.prepareStatement("INSERT INTO
+			PreparedStatement posted = con.prepareStatement("INSERT INTO ueberpruefung (passwordcheck) VALUES (SHA1('" + var2 + "'))");
+			passwordcheck = get();
+			posted.executeUpdate();
+
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return passwordcheck;
+	}
 }

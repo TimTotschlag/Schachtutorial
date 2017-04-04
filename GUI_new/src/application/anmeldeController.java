@@ -19,8 +19,16 @@ public class anmeldeController {
     private TextField benutzer;
 
     @FXML
-    void anmelden(ActionEvent event) {
-    	System.out.println("Benutzer: " + benutzer.getText() + "\nPasswort: " + passwort.getText());
+    void anmelden(ActionEvent event) throws Exception {
+//    	System.out.println("Benutzer: " + benutzer.getText() + "\nPasswort: " + passwort.getText());
+    	String pass = passwort.getText();
+    	String checkpass = Datenbank.ueberpruefen(pass);
+    	if(pass == checkpass){
+    		System.out.println("funzt");
+    	}
+    	else {
+    		System.out.println("funztniet");
+    	}
     }
 
     @FXML
