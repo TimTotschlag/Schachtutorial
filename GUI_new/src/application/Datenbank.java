@@ -137,10 +137,10 @@ public class Datenbank {
 			//tries to use code
 			try {
 				//call the method getConnection() to make sure that we are connected to the database
-				Connection con = getConnection();
+				Connection conn = getConnection();
 
 				//Statement that select column "passwordcheck" from table "ueberpruefung"
-				PreparedStatement statement = con.prepareStatement("SELECT passwordcheck FROM ueberpruefung");
+				PreparedStatement statement = conn.prepareStatement("SELECT passwordcheck FROM ueberpruefung");
 
 				//give the statement command to SQL and safe the return from the SQL in result
 				ResultSet result = statement.executeQuery();
@@ -201,10 +201,10 @@ public class Datenbank {
 		try {
 			String var1 = user;
 			//call the method getConnection() to make sure that we are connected to the database
-			Connection con = getConnection();
+			Connection conn = getConnection();
 
 			//a prepared statement that allows us to use MySQL commands as a String, here we use a Select Statement to get username and password from the table logindaten
-			PreparedStatement statement = con.prepareStatement("SELECT password FROM logindaten WHERE username = ('" + var1 + "')");
+			PreparedStatement statement = conn.prepareStatement("SELECT password FROM logindaten WHERE username = ('" + var1 + "')");
 
 			//gives out results as long as there are all given out
 			ResultSet result = statement.executeQuery();
