@@ -39,6 +39,7 @@ public class Datenbank {
 				//String that gives the password of the database to get access
 				String password = "";
 
+				
 				Class.forName(driver);
 
 				//try to connect to the database with the information (url, username, password)
@@ -55,9 +56,6 @@ public class Datenbank {
 				
 				//gives the useDatabase command to SQL
 				useDatabase.executeUpdate();
-				
-				//prints out that the programm is connected to SQL and we use the "schachbenutzer" database
-				System.out.println("MySQL mit Datenbank 'Schachbenutzer' Verbunden");
 				
 				//returns the conn that says the SQL Driver that we are connected to the SQL with correct logindata
 				return conn;
@@ -256,18 +254,25 @@ public class Datenbank {
 
 	}
 	
+	//method that delete the content in the column passwordcheck from the table ueberpruefung
 	public static void pruefinhaltloeschen() throws Exception{
 	
+		//tries to execute the code
 		try {
-			Connection con = getConnection();
-			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
-			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
-			// PreparedStatement posted = con.prepareStatement("INSERT INTO
-			PreparedStatement posted = con.prepareStatement("TRUNCATE TABLE `ueberpruefung`");
+			
+			//get the connection and use the database "schachbenutzer"
+			Connection conn = getConnection();
+			
+			//Statement that deletes the content in column from table ueberpruefung
+			PreparedStatement posted = conn.prepareStatement("TRUNCATE TABLE `ueberpruefung`");
+			
+			//give the posted command to SQL
 			posted.executeUpdate();
 
-
+			//catch if anything is wrong
 		} catch (Exception e) {
+			
+			//prints out the error message from SQL
 			System.out.println(e);
 		}
 		
