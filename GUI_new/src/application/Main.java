@@ -11,8 +11,7 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 
 	public static void main(String[] args)throws Exception {
-//		Datenbank.ueberpruefen();
-		
+
 			Application.launch(args);
 		
 

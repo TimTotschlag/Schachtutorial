@@ -15,11 +15,6 @@ import java.sql.ResultSet;
 //MySQL Library to give out the Table as Array List
 //import java.util.ArrayList;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-
 //start with the Database class, 4 methods
 public class Datenbank {
 
@@ -121,15 +116,8 @@ public class Datenbank {
 			//gives the posted command to SQL
 			posted.executeUpdate();
 			
-			//create a window
-			Pane erfolgPane = (Pane) FXMLLoader.load(Main.class.getResource("regiserfolg.fxml"));
-	    	Stage erfolgStage = new Stage();
-	    	erfolgStage.setScene(new Scene(erfolgPane));
-	    	erfolgStage.show();
-	    	erfolgStage.setResizable(false);
-	    	Thread.sleep(3000);  //paused the windows for 3 seconds
-	    	erfolgStage.close();  //close the windows
-	    	//window finished
+			//open a window that shows that registration is complete
+			regisController.registerComplete();
 		
 	    	//catch if errors
 		} catch (Exception e) {
@@ -137,15 +125,8 @@ public class Datenbank {
 			//prints out the SQL error message
 			System.out.println(e);
 			
-			//create Window
-			Pane fehlPane = (Pane) FXMLLoader.load(Main.class.getResource("regisfehlg.fxml"));
-    		Stage fehlStage = new Stage();
-    		fehlStage.setScene(new Scene(fehlPane));
-    		fehlStage.show();
-    		fehlStage.setResizable(false);
-    		Thread.sleep(3000);
-    		fehlStage.close();
-    		//window finished
+			//open a windows that shows that registration isn't complete
+			regisController.registrationIncomplete();
 		} 
 	}
 
