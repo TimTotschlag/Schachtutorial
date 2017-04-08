@@ -197,9 +197,13 @@ public class Datenbank {
 		
 	}
 	
+	//gets the password from table logindaten from the column with the right user
 	public static String getoriginalpassword(String user) throws Exception {
 		try {
+			
+			//Saved the String user we got to var1
 			String var1 = user;
+			
 			//call the method getConnection() to make sure that we are connected to the database
 			Connection conn = getConnection();
 
