@@ -78,44 +78,68 @@ public class Datenbank {
 			
 		//try to use the code
 		try {
-				//
-				Connection con = getConnection();
-				PreparedStatement createTable = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id), UNIQUE (username))");
-				PreparedStatement createUeberpruefung = con.prepareStatement("CREATE TABLE IF NOT EXISTS ueberpruefung(id int NOT NULL AUTO_INCREMENT, passwordcheck varchar(255), PRIMARY KEY (id))");
+				//get the connection and use the database "schachbenutzer"
+				Connection conn = getConnection();
+				
+				//Statement to create table "logindaten" (3 columns) 
+				PreparedStatement createTable = conn.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id), UNIQUE (username))");
+				
+				//Statement to create table "ueberpruefung" (2 columns)
+				PreparedStatement createUeberpruefung = conn.prepareStatement("CREATE TABLE IF NOT EXISTS ueberpruefung(id int NOT NULL AUTO_INCREMENT, passwordcheck varchar(255), PRIMARY KEY (id))");
+				
+				//gives the createTable command to SQL
 				createTable.executeUpdate();
+				
+				//gives the createUeberpruefung command to SQL
 				createUeberpruefung.executeUpdate();
 
+				//catch if there is anything wrong
 			} catch (Exception e) {
-				System.out.println(e);
-			} finally {
-				System.out.println("Tabellen erstellt");
-			}
+				
+				//prints out the SQL error message
+				System.out.println(e);	
+			} 
 		}
 
 
-	//method that gets the entered username and password from the "regis.Controller" class to push them into the "logindaten" table
+	//method that gets the entered username and password from the "regis.Controller" class to insert them into the "logindaten" table
 	public static void post(String benutzer, String passwort) throws Exception{
+		
+		//varchar with "benutzer" String from class regisController
 		final String var1 = benutzer;
+		
+		//varchar with "passwort" String from class regisController
 		final String var2 = passwort;
+		
+		//ties to use the code
 		try {
-			Connection con = getConnection();
-			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
-			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
-			// PreparedStatement posted = con.prepareStatement("INSERT INTO
-			PreparedStatement posted = con.prepareStatement("INSERT INTO logindaten (username, password) VALUES ('" + var1 + "', SHA1('" + var2 + "'))");
+			
+			//get the connection and use the database "schachbenutzer"
+			Connection conn = getConnection();
+			
+			//Statement posted that insert into the columns username and password from table logindaten the var1 and var2
+			PreparedStatement posted = conn.prepareStatement("INSERT INTO logindaten (username, password) VALUES ('" + var1 + "', SHA1('" + var2 + "'))");
+			
+			//gives the posted command to SQL
 			posted.executeUpdate();
-			//Fenster erstellen
+			
+			//create a window
 			Pane erfolgPane = (Pane) FXMLLoader.load(Main.class.getResource("regiserfolg.fxml"));
 	    	Stage erfolgStage = new Stage();
 	    	erfolgStage.setScene(new Scene(erfolgPane));
 	    	erfolgStage.show();
 	    	erfolgStage.setResizable(false);
-	    	Thread.sleep(3000);  //vorgang pausiert für 3 sekunden
-	    	erfolgStage.close();  //beendet das fenster
-	    	//fenster ende
+	    	Thread.sleep(3000);  //paused the windows for 3 seconds
+	    	erfolgStage.close();  //close the windows
+	    	//window finished
+		
+	    	//catch if errors
 		} catch (Exception e) {
+			
+			//prints out the SQL error message
 			System.out.println(e);
-			//fenster erstellen
+			
+			//create Window
 			Pane fehlPane = (Pane) FXMLLoader.load(Main.class.getResource("regisfehlg.fxml"));
     		Stage fehlStage = new Stage();
     		fehlStage.setScene(new Scene(fehlPane));
@@ -123,23 +147,23 @@ public class Datenbank {
     		fehlStage.setResizable(false);
     		Thread.sleep(3000);
     		fehlStage.close();
-    		//Fenster ende
-		} finally {
-			System.out.println("Eingabe erfolgreich");
-		}
+    		//window finished
+		} 
 	}
 
 
 	//method that gives out the stored information from the table "logindaten" from the database "schachbenutzer"
 	public static String get() throws Exception {
+		
+			//tries to use code
 			try {
 				//call the method getConnection() to make sure that we are connected to the database
 				Connection con = getConnection();
 
-				//a prepared statement that allows us to use MySQL commands as a String, here we use a Select Statement to get username and password from the table logindaten
+				//Statement that select column "passwordcheck" from table "ueberpruefung"
 				PreparedStatement statement = con.prepareStatement("SELECT passwordcheck FROM ueberpruefung");
 
-				//gives out results as long as there are all given out
+				//give the statement command to SQL and safe the return from the SQL in result
 				ResultSet result = statement.executeQuery();
 
 				//creates a new String Array for username and password
@@ -152,16 +176,14 @@ public class Datenbank {
 					passwordcheck = (result.getString("passwordcheck"));
 
 				}
-				//prints out that all information are repeated if all information are repeated
-				//System.out.println("Alle Inhalte wurden wiedergegeben");
 
-				//return the array list with username and passwords
+				//return the passwordcheck
 				return passwordcheck;
 
-			//if something goes wrong he get the errors from the MySQL database
+			//execute if something is wrong
 			} catch (Exception e) {
 
-				//prints out the error message from the MySQL database
+				//prints out the error message from SQL
 				System.out.println(e);
 			}
 			//the method return nothing if we have an error
@@ -169,18 +191,28 @@ public class Datenbank {
 
 		}
 
+	//method that stores the password from login into the "ueberpruefung" table into the column ueberpruefung
 	public static void ueberpruefen(String pass) throws Exception{
+		
+		//var2 is the password that we got from the anmeldeController class
 		final String var2 = pass;
+		
+		//tries to execute the code
 		try {
-			Connection con = getConnection();
-			// Zeile nimmt die beiden String Daten var1 und var2 und speichert
-			// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
-			// PreparedStatement posted = con.prepareStatement("INSERT INTO
-			PreparedStatement posted = con.prepareStatement("INSERT INTO ueberpruefung (passwordcheck) VALUES (SHA1('" + var2 + "'))");
+			
+			//get the connection and use the database "schachbenutzer"
+			Connection conn = getConnection();
+
+			//Statement that insert "var2" into column "passwordcheck" from "ueberpruefung" as SHA1 hash
+			PreparedStatement posted = conn.prepareStatement("INSERT INTO ueberpruefung (passwordcheck) VALUES (SHA1('" + var2 + "'))");
+			
+			//gives the posted command to SQL
 			posted.executeUpdate();
 
-
+			//catch is anything is wrong
 		} catch (Exception e) {
+			
+			//prints out the error message from SQL
 			System.out.println(e);
 		}
 		
@@ -209,12 +241,8 @@ public class Datenbank {
 				wichtig = (result.getString("password"));
 				
 			}
-			//prints out that all information are repeated if all information are repeated
-			//System.out.println("Alle Inhalte wurden wiedergegeben");
-
 			
-			
-			//return the array list with username and passwords
+			//return the hashed password 
 			return wichtig;
 
 		//if something goes wrong he get the errors from the MySQL database
