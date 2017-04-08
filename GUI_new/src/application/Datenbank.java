@@ -23,7 +23,42 @@ import javafx.stage.Stage;
 //start with the Database class, 4 methods
 public class Datenbank {
 
+	//method that connect to the MySQL database When no database is in use
+	public static Connection getConnectionFirst() throws Exception {
+		try {
+			//loads the java MySQL connector driver
+			String driver = "com.mysql.jdbc.Driver";
 
+			//String that give the path where the MySQL database is saved
+			String url = "jdbc:mysql://localhost";
+
+			//String that gives the username of the database to get access
+			String username = "root";
+
+			//String that gives the password of the database to get access
+			String password = "";
+
+			Class.forName(driver);
+
+			//try to connect to the database with the information (url, username, password)
+			Connection connFirst = DriverManager.getConnection(url, username, password);
+			PreparedStatement createDatabase = connFirst.prepareStatement("CREATE DATABASE IF NOT EXISTS schachbenutzer");
+			createDatabase.executeUpdate();
+			//prints out that the programm is connected to the database
+			System.out.println("MySQL ohne Datenbank Verbunden");
+
+			//returns the url, username and password
+			return connFirst;
+
+			//catch if there is anything wrong
+		} catch (Exception e) {
+
+			//calls out what the MySQL database error is
+			System.out.println(e);
+		}
+		//return nothing if we got errors
+		return null;
+	}
 	//method that connect to the MySQL database called "schachbenutzer"
 	public static Connection getConnection() throws Exception {
 
@@ -46,7 +81,7 @@ public class Datenbank {
 				Connection conn = DriverManager.getConnection(url, username, password);
 
 				//prints out that the programm is connected to the database
-				System.out.println("Datenbank Verbunden");
+				System.out.println("MySQL mit Datenbank 'Schachbenutzer' Verbunden");
 
 				//returns the url, username and password
 				return conn;
@@ -65,14 +100,17 @@ public class Datenbank {
 	//method thats create a table into the database, called "logindaten" but only if not exist
 	public static void createTable() throws Exception {
 			try {
+				getConnectionFirst();
 				Connection con = getConnection();
-				PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id))");
-				create.executeUpdate();
+				PreparedStatement createTable = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id), UNIQUE (username))");
+				PreparedStatement createUeberpruefung = con.prepareStatement("CREATE TABLE IF NOT EXISTS ueberpruefung(id int NOT NULL AUTO_INCREMENT, passwordcheck varchar(255), PRIMARY KEY (id))");
+				createTable.executeUpdate();
+				createUeberpruefung.executeUpdate();
 
 			} catch (Exception e) {
 				System.out.println(e);
 			} finally {
-				System.out.println("Tabelle erstellt");
+				System.out.println("Tabellen erstellt");
 			}
 		}
 
