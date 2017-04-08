@@ -23,42 +23,6 @@ import javafx.stage.Stage;
 //start with the Database class, 4 methods
 public class Datenbank {
 
-	//method that connect to the MySQL database When no database is in use
-	public static Connection getConnectionFirst() throws Exception {
-		try {
-			//loads the java MySQL connector driver
-			String driver = "com.mysql.jdbc.Driver";
-
-			//String that give the path where the MySQL database is saved
-			String url = "jdbc:mysql://localhost";
-
-			//String that gives the username of the database to get access
-			String username = "root";
-
-			//String that gives the password of the database to get access
-			String password = "";
-
-			Class.forName(driver);
-
-			//try to connect to the database with the information (url, username, password)
-			Connection connFirst = DriverManager.getConnection(url, username, password);
-			PreparedStatement createDatabase = connFirst.prepareStatement("CREATE DATABASE IF NOT EXISTS schachbenutzer");
-			createDatabase.executeUpdate();
-			//prints out that the programm is connected to the database
-			System.out.println("MySQL ohne Datenbank Verbunden");
-
-			//returns the url, username and password
-			return connFirst;
-
-			//catch if there is anything wrong
-		} catch (Exception e) {
-
-			//calls out what the MySQL database error is
-			System.out.println(e);
-		}
-		//return nothing if we got errors
-		return null;
-	}
 	//method that connect to the MySQL database called "schachbenutzer"
 	public static Connection getConnection() throws Exception {
 
@@ -67,7 +31,7 @@ public class Datenbank {
 				String driver = "com.mysql.jdbc.Driver";
 
 				//String that give the path where the MySQL database is saved
-				String url = "jdbc:mysql://localhost/schachbenutzer";
+				String url = "jdbc:mysql://localhost";
 
 				//String that gives the username of the database to get access
 				String username = "root";
@@ -79,11 +43,23 @@ public class Datenbank {
 
 				//try to connect to the database with the information (url, username, password)
 				Connection conn = DriverManager.getConnection(url, username, password);
-
-				//prints out that the programm is connected to the database
+				
+				//try to create database "schachbenutzer" if the database not exists
+				PreparedStatement createDatabase = conn.prepareStatement("CREATE DATABASE IF NOT EXISTS schachbenutzer");
+				
+				//gives the createDatabase command to SQL
+				createDatabase.executeUpdate();
+				
+				//Statement that says that we have to use the database "schachbenutzer"
+				PreparedStatement useDatabase = conn.prepareStatement("USE schachbenutzer");
+				
+				//gives the useDatabase command to SQL
+				useDatabase.executeUpdate();
+				
+				//prints out that the programm is connected to SQL and we use the "schachbenutzer" database
 				System.out.println("MySQL mit Datenbank 'Schachbenutzer' Verbunden");
-
-				//returns the url, username and password
+				
+				//returns the conn that says the SQL Driver that we are connected to the SQL with correct logindata
 				return conn;
 
 				//catch if there is anything wrong
@@ -97,10 +73,12 @@ public class Datenbank {
 		}
 
 
-	//method thats create a table into the database, called "logindaten" but only if not exist
+	//method that create the tables logindaten (3 columns) and ueberpruefung (2 columns) 
 	public static void createTable() throws Exception {
-			try {
-				getConnectionFirst();
+			
+		//try to use the code
+		try {
+				//
 				Connection con = getConnection();
 				PreparedStatement createTable = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id), UNIQUE (username))");
 				PreparedStatement createUeberpruefung = con.prepareStatement("CREATE TABLE IF NOT EXISTS ueberpruefung(id int NOT NULL AUTO_INCREMENT, passwordcheck varchar(255), PRIMARY KEY (id))");
