@@ -19,7 +19,10 @@ public class Dame extends ChessPieces {
 	
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		
+		if((xPos == destX && yPos != destY) || (xPos != destX && yPos == destY))
+			valid = true;
+		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
+				valid = true;
 		return  valid;
 	}
 }

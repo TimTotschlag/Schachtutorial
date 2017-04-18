@@ -20,9 +20,14 @@ public class ChessBoard {
 	 */
 	public static void main(String[] args) {
 		fullBoard();
-		showAll();
-		turm[0].movePiece(2, 8);
-		turm[0].movePiece(2,4);
+		bauer[0].makeMove(1,5);
+		bauer[0].makeMove(1,4);
+		bauer[0].makeMove(1,3);
+		bauer[0].makeMove(1,2);
+		bauer[0].makeMove(1,1);
+		bauer[0].makeMove(1,0);
+//		turm[0].movePiece(2,4);
+		
 		showAll();
 	}
 	

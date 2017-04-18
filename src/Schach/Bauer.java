@@ -18,18 +18,36 @@ public class Bauer extends ChessPieces {
 	 * @param destY
 	 * @return
 	 */
-	boolean isValid(int xPos, int yPos,int destX,int destY){
+	boolean isValid(int xPos, int yPos, int destX, int destY) {
 		boolean valid = false;
-		if(firstMove == true && destY - yPos == -2 && destX == xPos){
+		if(this.color == "Weiﬂ"){
+		if (firstMove == true && destY - yPos == -2 && destX == xPos) {
 			valid = true;
 			this.firstMove = false;
 		}
-		if(destX == xPos && destY - yPos == -1){
+		if (destX == xPos && destY - yPos == -1) {
 			valid = true;
 			this.firstMove = false;
 		}
-		return  valid;
+		return valid;
+		}
+		if (firstMove == true && destY - yPos == 2 && destX == xPos) {
+			valid = true;
+			this.firstMove = false;
+		}
+		if (destX == xPos && destY - yPos == 1) {
+			valid = true;
+			this.firstMove = false;
+		}
+		return valid;
 	}
+	
+	
+	void makeMove(int destX, int destY){
+		if(boardCheck(destX,destY) == true)
+		this.movePiece(destX, destY);
+	}
+
 	
 	/**
 	 * 

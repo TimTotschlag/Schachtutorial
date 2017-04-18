@@ -19,7 +19,8 @@ public class Läufer extends ChessPieces {
 	
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		
+		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
+			valid = true;
 		return  valid;
 	}
 }

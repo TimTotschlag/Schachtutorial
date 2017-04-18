@@ -19,7 +19,11 @@ public class König extends ChessPieces {
 	
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		
+		if(Math.abs(destX - xPos) == 1 || Math.abs(destY - yPos) == 1)
+			if(Math.abs(destX - xPos) < 2 && Math.abs(destY -yPos) < 2)
+				valid = true;
+			else
+				valid = false;
 		return  valid;
 	}
 }

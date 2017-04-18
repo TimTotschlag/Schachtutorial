@@ -19,7 +19,15 @@ public class Springer extends ChessPieces {
 	
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		
+		if(Math.abs(destX - xPos) == 2 && Math.abs(destY - yPos) == 1)
+			valid = true;
+		if(Math.abs(destX - xPos) == 1 && Math.abs(destY - yPos) == 2)
+			valid = true;
 		return  valid;
+	}
+	
+	void makeMove(int destX, int destY){
+		if(boardCheck(destX,destY) == true)
+		this.movePiece(destX, destY);
 	}
 }

@@ -30,6 +30,14 @@ public class ChessPieces {
 		this.color = color[colorId];
 	}
 	
+	boolean boardCheck(int destX, int destY){
+		boolean valid = true;
+		if(destX > 8 || destX < 1 || destY > 8 || destY < 1)
+			valid = false;
+		return valid;
+	}
+	
+	
 //	void setAll(int xPosId, int yPosId, int typeId, int colorId){
 //		int yPos[] = {1,2,3,4,5,6,7,8};
 //		this.yPos = yPos[yPosId];

@@ -23,4 +23,9 @@ public class Turm extends ChessPieces {
 			valid = true;
 		return  valid;
 	}
+	
+	void makeMove(int destX, int destY){
+		if(boardCheck(destX,destY) == true)
+		this.movePiece(destX, destY);
+	}
 }
