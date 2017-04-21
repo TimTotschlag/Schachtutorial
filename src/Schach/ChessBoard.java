@@ -2,7 +2,7 @@ package Schach;
 
 
 public class ChessBoard {
-	
+
 	static int typeSelect = 0;
 	static int pieceSelect = 0;
 	static int xPos = 0;
@@ -20,17 +20,17 @@ public class ChessBoard {
 	 */
 	public static void main(String[] args) {
 		fullBoard();
+		bauer[9].makeMove(2,4); 
 		bauer[0].makeMove(1,5);
-		bauer[0].makeMove(1,4);
-		bauer[0].makeMove(1,3);
-		bauer[0].makeMove(1,2);
-		bauer[0].makeMove(1,1);
-		bauer[0].makeMove(1,0);
-//		turm[0].movePiece(2,4);
+		bauer[0].makeMove(2,4);
+		
 		
 		showAll();
 	}
-	
+
+	/**
+	 * Outputs all Pieces on the board
+	 */
 	static void showAll(){
 		for(int i = 0; i < bauer.length; i++)
 			 bauer[i].getAll();
@@ -45,9 +45,52 @@ public class ChessBoard {
 			 for(int i = 0; i < könig.length; i++)
 			 könig[i].getAll();
 	}
+
 	
+
 	/**
-	 * 
+	 * Used in generating the Chessboard
+	 * Switching to the next type of pieces
+	 * @param j
+	 * @param pieceLimit, setting the limit on how many of this type should be made
+	 */
+	static void nextType(int j, int pieceLimit){
+		if (j == pieceLimit) {
+			typeSelect++;
+			pieceSelect = 0;
+			first = true;
+		}
+	}
+
+	/**
+	 * Picking out which side to choose next
+	 * @param i
+	 * @param xPosWhite
+	 * @param yPosWhite
+	 * @param xPosBlack
+	 * @param yPosBlack
+	 * @param pieceSelectId44
+	 */
+	static void chooseSide(int i,int xPosWhite,int yPosWhite,int xPosBlack,int yPosBlack,int pieceSelectId){
+		if(first == true){
+			switch (i){
+				case 0:
+					xPos = xPosWhite;
+					yPos = yPosWhite;
+					first = false;
+					break;
+				case 1:
+					xPos = xPosBlack;
+					yPos = yPosBlack;
+					pieceSelect = pieceSelectId;
+					first = false;
+					break;
+				}
+			}
+		}
+
+	/**
+	 *Creating all ChessPieces
 	 */
 	static void fullBoard(){
 		// Setting all Chess Pieces up on a ChessBoard
@@ -104,46 +147,5 @@ public class ChessBoard {
 					} // 16x Loop End
 				} // 2x Loop End
 
-	}
-	
-	/**
-	 * Picking out which side to choose next
-	 * @param i
-	 * @param xPosWhite
-	 * @param yPosWhite
-	 * @param xPosBlack
-	 * @param yPosBlack
-	 * @param pieceSelectId
-	 */
-	static void chooseSide(int i,int xPosWhite,int yPosWhite,int xPosBlack,int yPosBlack,int pieceSelectId){
-		if(first == true){
-			switch (i){
-				case 0: 
-					xPos = xPosWhite;
-					yPos = yPosWhite;
-					first = false;
-					break;
-				case 1:
-					xPos = xPosBlack;
-					yPos = yPosBlack;
-					pieceSelect = pieceSelectId;
-					first = false;
-					break;
-				}
-			}
-		}
-	
-	/**
-	 * 
-	 * Starting with the next type of pieces
-	 * @param j
-	 * @param pieceLimit
-	 */
-	static void nextType(int j, int pieceLimit){
-		if (j == pieceLimit) {
-			typeSelect++;
-			pieceSelect = 0;
-			first = true;
-		}
 	}
 }

@@ -1,7 +1,5 @@
 package Schach;
 
-import java.lang.Math;
-
 public class Bauer extends ChessPieces {
 	
 	boolean firstMove = true;
@@ -29,6 +27,9 @@ public class Bauer extends ChessPieces {
 			valid = true;
 			this.firstMove = false;
 		}
+		if (destX == xPos + 1 || destX == xPos-1 && destY == yPos -1){
+			valid = isValidLoop(valid);
+		}
 		return valid;
 		}
 		if (firstMove == true && destY - yPos == 2 && destX == xPos) {
@@ -39,18 +40,15 @@ public class Bauer extends ChessPieces {
 			valid = true;
 			this.firstMove = false;
 		}
+		if (destX == xPos + 1 || destX == xPos-1 && destY == yPos +1){
+			valid = isValidLoop(valid);
+		}
 		return valid;
 	}
 	
 	
-	void makeMove(int destX, int destY){
-		if(boardCheck(destX,destY) == true)
-		this.movePiece(destX, destY);
-	}
-
-	
 	/**
-	 * 
+	 * Sets new X and Y Positions for this Piece if Destination is Valid
 	 * @param destX
 	 * @param destY
 	 */
@@ -59,7 +57,47 @@ public class Bauer extends ChessPieces {
 			this.xPos = destX;
 			this.yPos = destY;
 		}
-		else
-			System.out.println("INVALID");
+	}
+
+	/**
+	 * If move is valid, move piece
+	 * @param destX
+	 * @param destY
+	 */
+	void makeMove(int destX, int destY){
+		if(boardCheck(destX,destY) == true){
+			if(attack(destX, destY) == true)
+				this.movePiece(destX, destY);
+			else
+				System.out.println("INVALID");
+		}
+	}
+	
+	/**
+	 * Loop used in the is Valid Method
+	 * Cycles through all pieces 
+	 * @param valid
+	 * @return
+	 */
+	boolean isValidLoop(boolean valid){
+		for (int j = 0; j < ChessBoard.bauer.length; j++)
+			if (xPos == ChessBoard.bauer[j].xPos && yPos == ChessBoard.bauer[j].yPos)
+				valid = true;
+		for (int j = 0; j < ChessBoard.turm.length; j++)
+			if (xPos == ChessBoard.turm[j].xPos && yPos == ChessBoard.turm[j].yPos)
+				valid = true;
+		for (int j = 0; j < ChessBoard.springer.length; j++)
+			if (xPos == ChessBoard.springer[j].xPos && yPos == ChessBoard.springer[j].yPos)
+				valid = true;
+		for (int j = 0; j < ChessBoard.läufer.length; j++)
+			if (xPos == ChessBoard.läufer[j].xPos && yPos == ChessBoard.läufer[j].yPos)
+				valid = true;
+		for (int j = 0; j < ChessBoard.dame.length; j++)
+			if (xPos == ChessBoard.dame[j].xPos && yPos == ChessBoard.dame[j].yPos)
+				valid = true;
+		for (int j = 0; j < ChessBoard.könig.length; j++)
+			if (xPos == ChessBoard.könig[j].xPos && yPos == ChessBoard.könig[j].yPos)
+				valid = true;
+		return valid;
 	}
 }
