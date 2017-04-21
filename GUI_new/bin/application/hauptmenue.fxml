@@ -23,7 +23,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="115.0" layoutY="193.0" mnemonicParsing="false" onAction="#Start" text="Szenarien">
+                  <Button layoutX="115.0" layoutY="193.0" mnemonicParsing="false" onAction="#Szenarien" text="Szenarien">
                      <font>
                         <Font size="19.0" />
                      </font>

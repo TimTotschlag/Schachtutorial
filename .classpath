@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="GUI_new/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="J:/FOI2/Kruse/Datenbank KFZ Handel/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar"/>
-	<classpathentry kind="lib" path="D:/GitNeu/mysql-connector-java-5.1.41-bin.jar"/>
+	<classpathentry kind="lib" path="T:/FOI2/Kruse/Datenbank KFZ Handel/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar"/>
 	<classpathentry kind="output" path="GUI_new/bin"/>
 </classpath>
