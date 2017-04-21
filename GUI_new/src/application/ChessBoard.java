@@ -1,7 +1,12 @@
-package algorithmus;
+package application;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
-public class ChessBoard {
+public class ChessBoard extends Application {
 
 	static int typeSelect = 0;
 	static int pieceSelect = 0;
@@ -18,15 +23,20 @@ public class ChessBoard {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		fullBoard();
-		bauer[9].makeMove(2,4);
-		bauer[0].makeMove(1,5);
-		bauer[0].makeMove(2,4);
-
-
-		showAll();
+	public static void main(String[] args)throws Exception {
+		Application.launch(args);
 	}
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Pane mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
+		primaryStage.setScene(new Scene(mainPane)); //erstellt das Fenster
+		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
+		primaryStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
+		primaryStage.setTitle("Sachtutorial");
+	}
+		
+	
 
 	/**
 	 * Outputs all Pieces on the board
@@ -148,4 +158,7 @@ public class ChessBoard {
 				} // 2x Loop End
 
 	}
+	
+
+
 }

@@ -1,15 +1,16 @@
-package algorithmus;
+package application;
 
 import java.lang.Math;
 
-public class Läufer extends ChessPieces {
+public class König extends ChessPieces {
 
-	Läufer(int a,int b,int c,int d){
+	König(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
 
+
 	/**
-	 * Checks if moving in a crossed Line
+	 *
 	 * @param xPos
 	 * @param yPos
 	 * @param destX
@@ -18,8 +19,11 @@ public class Läufer extends ChessPieces {
 	 */
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
-			valid = true;
+		if(Math.abs(destX - xPos) == 1 || Math.abs(destY - yPos) == 1)
+			if(Math.abs(destX - xPos) < 2 && Math.abs(destY -yPos) < 2)
+				valid = true;
+			else
+				valid = false;
 		return  valid;
 	}
 
@@ -41,7 +45,7 @@ public class Läufer extends ChessPieces {
 	 * @param destY
 	 */
 	void makeMove(int destX, int destY){
-		if(boardCheck(destX,destY) == true && collisionCheck(destX,destY) == true){
+		if(boardCheck(destX,destY) == true){
 			if(attack(destX, destY) == true)
 				this.movePiece(destX, destY);
 			else

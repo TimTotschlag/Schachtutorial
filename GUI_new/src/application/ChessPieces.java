@@ -1,4 +1,4 @@
-package algorithmus;
+package application;
 
 //import java.util.Arrays;
 

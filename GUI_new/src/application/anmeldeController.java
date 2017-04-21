@@ -22,7 +22,7 @@ public class anmeldeController {
 
     @FXML
     void anmelden(ActionEvent event) throws Exception {
-    	AnchorPane hauptPane = (AnchorPane) FXMLLoader.load(Main.class.getResource("hauptmenue.fxml"));
+    	AnchorPane hauptPane = (AnchorPane) FXMLLoader.load(ChessBoard.class.getResource("hauptmenue.fxml"));
     	Stage hauptStage = new Stage();
     	hauptStage.setScene(new Scene(hauptPane));
     	hauptStage.setTitle("Hauptseite");
@@ -34,15 +34,15 @@ public class anmeldeController {
     	/*String user = benutzer.getText();
     	String pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
-    	
+
     	String pwueberpruefung = Datenbank.get();
-    	
+
     	String pwlogindaten = Datenbank.getoriginalpassword(user);
-    	
+
     	if(pwueberpruefung.equals(pwlogindaten)){
     		Datenbank.pruefinhaltloeschen();
     		System.out.println("Login korrekt!");
-    		
+
     	}
     	else {
     		System.out.println("Falscher Username oder Passwort");
@@ -52,7 +52,7 @@ public class anmeldeController {
 
     @FXML
     void registrieren(ActionEvent event) throws Exception {
-    	Pane regisPane = (Pane) FXMLLoader.load(Main.class.getResource("regis.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
+    	Pane regisPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regis.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
     	Stage regisStage = new Stage();
     	regisStage.setScene(new Scene(regisPane));//erstellt das Fenster
     	regisStage.show();//Zeigt das Fenster welches man erstellt hat an

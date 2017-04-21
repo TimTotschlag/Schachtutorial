@@ -13,14 +13,16 @@ public class hauptmenueController {
 
     @FXML
     void Start(ActionEvent event) throws Exception {
-    	AnchorPane chessPane = (AnchorPane) FXMLLoader.load(Main.class.getResource("chessboard.fxml"));
+    	ChessBoard.fullBoard();
+    	ChessBoard.showAll();
+    	AnchorPane chessPane = (AnchorPane) FXMLLoader.load(ChessBoard.class.getResource("chessboard.fxml"));
     	Stage chessboard = new Stage();
     	chessboard.setScene(new Scene(chessPane));
     	chessboard.setTitle("Schachtutorial");
     	chessboard.setResizable(false);
     	chessboard.show();
     	((Node)(event.getSource())).getScene().getWindow().hide();
-    	
+
     }
 
     @FXML

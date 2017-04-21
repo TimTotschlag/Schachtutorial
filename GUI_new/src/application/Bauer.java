@@ -1,4 +1,4 @@
-package algorithmus;
+package application;
 
 public class Bauer extends ChessPieces {
 
