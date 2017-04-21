@@ -4,9 +4,11 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -20,8 +22,16 @@ public class anmeldeController {
 
     @FXML
     void anmelden(ActionEvent event) throws Exception {
+    	AnchorPane hauptPane = (AnchorPane) FXMLLoader.load(Main.class.getResource("hauptmenue.fxml"));
+    	Stage hauptStage = new Stage();
+    	hauptStage.setScene(new Scene(hauptPane));
+    	hauptStage.setTitle("Hauptseite");
+    	hauptStage.show();
+    	hauptStage.setResizable(false);
+    	((Node)(event.getSource())).getScene().getWindow().hide();
+    }
 
-    	String user = benutzer.getText();
+    	/*String user = benutzer.getText();
     	String pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
     	
@@ -38,7 +48,7 @@ public class anmeldeController {
     		System.out.println("Falscher Username oder Passwort");
     		Datenbank.pruefinhaltloeschen();
     	}
-    }
+    }*/
 
     @FXML
     void registrieren(ActionEvent event) throws Exception {

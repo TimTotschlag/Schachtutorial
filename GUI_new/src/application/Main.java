@@ -25,6 +25,7 @@ public class Main extends Application {
 		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
 		primaryStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
 		primaryStage.setTitle("Sachtutorial");
+		
 
 
 
