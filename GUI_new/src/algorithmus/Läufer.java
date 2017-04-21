@@ -1,9 +1,9 @@
-package Schach;
+package algorithmus;
 
 import java.lang.Math;
 
 public class Läufer extends ChessPieces {
-	
+
 	Läufer(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
@@ -34,7 +34,7 @@ public class Läufer extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-	
+
 	/**
 	 * If move is valid, move piece
 	 * @param destX

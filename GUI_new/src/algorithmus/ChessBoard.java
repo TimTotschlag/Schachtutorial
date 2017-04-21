@@ -1,4 +1,4 @@
-package Schach;
+package algorithmus;
 
 
 public class ChessBoard {
@@ -20,11 +20,11 @@ public class ChessBoard {
 	 */
 	public static void main(String[] args) {
 		fullBoard();
-		bauer[9].makeMove(2,4); 
+		bauer[9].makeMove(2,4);
 		bauer[0].makeMove(1,5);
 		bauer[0].makeMove(2,4);
-		
-		
+
+
 		showAll();
 	}
 
@@ -46,7 +46,7 @@ public class ChessBoard {
 			 könig[i].getAll();
 	}
 
-	
+
 
 	/**
 	 * Used in generating the Chessboard

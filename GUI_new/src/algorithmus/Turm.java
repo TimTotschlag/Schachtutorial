@@ -1,4 +1,4 @@
-package Schach;
+package algorithmus;
 
 public class Turm extends ChessPieces {
 

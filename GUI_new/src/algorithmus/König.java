@@ -1,16 +1,16 @@
-package Schach;
+package algorithmus;
 
 import java.lang.Math;
 
 public class König extends ChessPieces {
-	
+
 	König(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
-	
-	
+
+
 	/**
-	 * 
+	 *
 	 * @param xPos
 	 * @param yPos
 	 * @param destX
@@ -38,7 +38,7 @@ public class König extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-	
+
 	/**
 	 * If move is valid, move piece
 	 * @param destX

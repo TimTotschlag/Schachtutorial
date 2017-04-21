@@ -1,15 +1,15 @@
-package Schach;
+package algorithmus;
 
 public class Bauer extends ChessPieces {
-	
+
 	boolean firstMove = true;
-	
+
 	Bauer(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
 
 	/**
-	 * 
+	 *
 	 * @param xPos
 	 * @param yPos
 	 * @param destX
@@ -45,8 +45,8 @@ public class Bauer extends ChessPieces {
 		}
 		return valid;
 	}
-	
-	
+
+
 	/**
 	 * Sets new X and Y Positions for this Piece if Destination is Valid
 	 * @param destX
@@ -72,10 +72,10 @@ public class Bauer extends ChessPieces {
 				System.out.println("INVALID");
 		}
 	}
-	
+
 	/**
 	 * Loop used in the is Valid Method
-	 * Cycles through all pieces 
+	 * Cycles through all pieces
 	 * @param valid
 	 * @return
 	 */

@@ -1,13 +1,13 @@
-package Schach;
+package algorithmus;
 
 import java.lang.Math;
 
 public class Dame extends ChessPieces {
-	
+
 	Dame(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
-	
+
 	/**
 	 * Checks if moving in a crossed or horizontal line
 	 * @param xPos
@@ -24,7 +24,7 @@ public class Dame extends ChessPieces {
 				valid = true;
 		return  valid;
 	}
-	
+
 	/**
 	 * Sets new X and Y Positions for this Piece if Destination is Valid
 	 * @param destX
@@ -36,7 +36,7 @@ public class Dame extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-	
+
 	/**
 	 * If move is valid, move piece
 	 * @param destX

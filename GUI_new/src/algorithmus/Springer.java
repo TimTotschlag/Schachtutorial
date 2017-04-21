@@ -1,13 +1,13 @@
-package Schach;
+package algorithmus;
 
 import java.lang.Math;
 
 public class Springer extends ChessPieces {
-	
+
 	Springer(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
-	
+
 	/**
 	 * Checks if moving in a horizontal line
 	 * @param xPos
@@ -36,7 +36,7 @@ public class Springer extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-	
+
 	/**
 	 * If move is valid, move piece
 	 * @param destX
