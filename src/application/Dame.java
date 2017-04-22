@@ -1,15 +1,15 @@
-package Schach;
+package application;
 
 import java.lang.Math;
 
-public class Läufer extends ChessPieces {
-	
-	Läufer(int a,int b,int c,int d){
+public class Dame extends ChessPieces {
+
+	Dame(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
 
 	/**
-	 * Checks if moving in a crossed Line
+	 * Checks if moving in a crossed or horizontal line
 	 * @param xPos
 	 * @param yPos
 	 * @param destX
@@ -18,8 +18,10 @@ public class Läufer extends ChessPieces {
 	 */
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
+		if((xPos == destX && yPos != destY) || (xPos != destX && yPos == destY))
 			valid = true;
+		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
+				valid = true;
 		return  valid;
 	}
 
@@ -34,7 +36,7 @@ public class Läufer extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-	
+
 	/**
 	 * If move is valid, move piece
 	 * @param destX

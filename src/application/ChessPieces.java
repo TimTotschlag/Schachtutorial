@@ -1,4 +1,4 @@
-package Schach;
+package application;
 
 //import java.util.Arrays;
 
@@ -11,6 +11,8 @@ public class ChessPieces {
 	int yPos;
 	String type;
 	String color;
+	
+
 
 	/**
 	 * Setting all attributes for this object
@@ -30,7 +32,7 @@ public class ChessPieces {
 		this.color = color[colorId];
 	}
 
-	
+
 	/**
 	 * Checking if Destination is on board
 	 * @param destX
@@ -54,7 +56,7 @@ public class ChessPieces {
 		System.out.println(this.xPos + " " + this.yPos + "   " + this.type + "\t" + this.color + "\t" + this.alive);
 	}
 
-	
+
 	/**
 	 * Cycles through every Piece and Checks if it is on this Piece's Destination to take it off the playing field
 	 * If same Team move is not valid
@@ -132,7 +134,7 @@ public class ChessPieces {
 		for (int i = 1; i < Math.abs(bufferX); i++) {
 			if (xClone == 0 || yClone == 0) {
 				try {
-					xClone += bufferX / Math.abs(bufferX);	
+					xClone += bufferX / Math.abs(bufferX);
 				} catch (java.lang.ArithmeticException e) {
 					yClone += bufferY / Math.abs(bufferY);
 				}

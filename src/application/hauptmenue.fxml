@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.hauptmenueController">
+   <children>
+      <SplitPane dividerPositions="0.0896358543417367" orientation="VERTICAL" prefHeight="359.0" prefWidth="338.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="77.0" layoutY="14.0" text="Schachtutorial">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="115.0" layoutY="122.0" mnemonicParsing="false" onAction="#Start" prefHeight="39.0" prefWidth="107.0" text="Start">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="115.0" layoutY="193.0" mnemonicParsing="false" onAction="#Szenarien" text="Szenarien">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="280.0" layoutY="282.0" mnemonicParsing="false" onAction="#zurück" text="zurück" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

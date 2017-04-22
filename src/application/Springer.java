@@ -1,16 +1,15 @@
-package Schach;
+package application;
 
 import java.lang.Math;
 
-public class König extends ChessPieces {
-	
-	König(int a,int b,int c,int d){
+public class Springer extends ChessPieces {
+
+	Springer(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
-	
-	
+
 	/**
-	 * 
+	 * Checks if moving in a horizontal line
 	 * @param xPos
 	 * @param yPos
 	 * @param destX
@@ -19,11 +18,10 @@ public class König extends ChessPieces {
 	 */
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		if(Math.abs(destX - xPos) == 1 || Math.abs(destY - yPos) == 1)
-			if(Math.abs(destX - xPos) < 2 && Math.abs(destY -yPos) < 2)
-				valid = true;
-			else
-				valid = false;
+		if(Math.abs(destX - xPos) == 2 && Math.abs(destY - yPos) == 1)
+			valid = true;
+		if(Math.abs(destX - xPos) == 1 && Math.abs(destY - yPos) == 2)
+			valid = true;
 		return  valid;
 	}
 
@@ -38,7 +36,7 @@ public class König extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-	
+
 	/**
 	 * If move is valid, move piece
 	 * @param destX

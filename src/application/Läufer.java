@@ -1,13 +1,15 @@
-package Schach;
+package application;
 
-public class Turm extends ChessPieces {
+import java.lang.Math;
 
-	Turm(int a,int b,int c,int d){
+public class Läufer extends ChessPieces {
+
+	Läufer(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
 
 	/**
-	 * If X or Y (not both) have changed, move is valid
+	 * Checks if moving in a crossed Line
 	 * @param xPos
 	 * @param yPos
 	 * @param destX
@@ -16,7 +18,7 @@ public class Turm extends ChessPieces {
 	 */
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		if((xPos == destX && yPos != destY) || (xPos != destX && yPos == destY))
+		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
 			valid = true;
 		return  valid;
 	}
@@ -32,8 +34,6 @@ public class Turm extends ChessPieces {
 			this.yPos = destY;
 		}
 	}
-
-
 
 	/**
 	 * If move is valid, move piece

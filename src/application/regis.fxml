@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="285.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.regisController">
+   <children>
+      <Label layoutX="72.0" layoutY="14.0" text="Registrierung">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <VBox layoutX="61.0" layoutY="59.0" prefHeight="52.0" prefWidth="164.0">
+         <children>
+            <TextField fx:id="regisname" promptText="Benutzername" />
+            <PasswordField fx:id="regispasswort" promptText="Passwort" />
+         </children>
+      </VBox>
+      <HBox layoutX="61.0" layoutY="111.0" prefHeight="25.0" prefWidth="173.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#regis" prefHeight="25.0" prefWidth="82.0" text="registrieren" />
+            <Button mnemonicParsing="false" onAction="#abbrechen" prefHeight="25.0" prefWidth="82.0" text="abbrechen" />
+         </children>
+      </HBox>
+   </children>
+</Pane>
