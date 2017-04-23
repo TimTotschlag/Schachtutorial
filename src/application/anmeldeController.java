@@ -33,8 +33,7 @@ public class anmeldeController {
     	hauptStage.show();
     	hauptStage.setResizable(false);
     	((Node)(event.getSource())).getScene().getWindow().hide();
-    }
-
+    	
     	/*String user = benutzer.getText();
     	String pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
@@ -51,8 +50,9 @@ public class anmeldeController {
     	else {
     		System.out.println("Falscher Username oder Passwort");
     		Datenbank.pruefinhaltloeschen();
-    	}
-    }*/
+    	}*/
+    }
+
 
     @FXML
     void registrieren(ActionEvent event) throws Exception {

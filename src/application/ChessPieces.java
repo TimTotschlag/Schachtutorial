@@ -1,7 +1,5 @@
 package application;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 //import java.util.Arrays;
 
@@ -15,7 +13,7 @@ public class ChessPieces {
 	String color;
 
 	static void bild(){
-    	
+
     }
 
 
