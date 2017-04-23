@@ -31,7 +31,7 @@ public class Bauer extends ChessPieces {
 			valid = isValidLoop(valid);
 		}
 		return valid;
-		}
+		} else {
 		if (firstMove == true && destY - yPos == 2 && destX == xPos) {
 			valid = true;
 			this.firstMove = false;
@@ -42,6 +42,7 @@ public class Bauer extends ChessPieces {
 		}
 		if (destX == xPos + 1 || destX == xPos-1 && destY == yPos +1){
 			valid = isValidLoop(valid);
+		}
 		}
 		return valid;
 	}
