@@ -1,7 +1,9 @@
 package application;
 
-//import java.util.Arrays;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+//import java.util.Arrays;
 
 
 public class ChessPieces {
@@ -11,7 +13,10 @@ public class ChessPieces {
 	int yPos;
 	String type;
 	String color;
-	
+
+	static void bild(){
+    	
+    }
 
 
 	/**
@@ -53,7 +58,9 @@ public class ChessPieces {
 	 * Displaying all attributes for this Object
 	 */
 	void getAll(){
-		System.out.println(this.xPos + " " + this.yPos + "   " + this.type + "\t" + this.color + "\t" + this.alive);
+		char xPos[] = {0,65,66,67,68,69,70,71,72};
+		int yPos[] = {0,8,7,6,5,4,3,2,1};
+		System.out.println(xPos[this.xPos] + " " + yPos[this.yPos] + "   " + this.type + "\t" + this.color + "\t" + this.alive);
 	}
 
 
@@ -131,7 +138,7 @@ public class ChessPieces {
 		boolean valid = true;
 		bufferX = destX - xClone;
 		bufferY = destY - yClone;
-		for (int i = 1; i < Math.abs(bufferX); i++) {
+		for (int i = 1; i < Math.abs(Math.max(bufferX,bufferY)); i++) {
 			if (xClone == 0 || yClone == 0) {
 				try {
 					xClone += bufferX / Math.abs(bufferX);
@@ -139,8 +146,11 @@ public class ChessPieces {
 					yClone += bufferY / Math.abs(bufferY);
 				}
 			} else {
+				try {
 				xClone += bufferX / Math.abs(bufferX);
+				} catch (java.lang.ArithmeticException e) {
 				yClone += bufferY / Math.abs(bufferY);
+				}
 			}
 			valid = checkAll(valid, xClone, yClone);
 		}

@@ -29,7 +29,8 @@ public class ChessBoard extends Application {
 	public static void main(String[] args)throws Exception {
 		Application.launch(args);
 	}
-	
+
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Pane mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml")); //l√§d die fxml Datei an welches die Daten des Fensters enth√§lt
@@ -80,44 +81,7 @@ public class ChessBoard extends Application {
 			showAll();
 		}
 	}
-	
-//	static void chooseDest(int destX, int destY) {
-//		if (choose == false) {
-//			for (int j = 0; j < bauer.length; j++) {
-//				if (chooseX == bauer[j].xPos && chooseY == bauer[j].yPos && bauer[j].alive == true) {
-//					bauer[j].makeMove(destX, destY);
-//				}
-//			}
-//			for (int j = 0; j < turm.length; j++) {
-//				if (chooseX == turm[j].xPos && chooseY == turm[j].yPos && bauer[j].alive == true) {
-//					bauer[j].makeMove(destX, destY);
-//				}
-//			}
-//			for (int j = 0; j < springer.length; j++) {
-//				if (chooseX == springer[j].xPos && chooseY == springer[j].yPos && bauer[j].alive == true) {
-//					bauer[j].makeMove(destX, destY);
-//				}
-//			}
-//			for (int j = 0; j < l‰ufer.length; j++) {
-//				if (chooseX == l‰ufer[j].xPos && chooseY == l‰ufer[j].yPos && bauer[j].alive == true) {
-//					bauer[j].makeMove(destX, destY);
-//				}
-//			}
-//			for (int j = 0; j < dame.length; j++) {
-//				if (chooseX == dame[j].xPos && chooseY == dame[j].yPos && bauer[j].alive == true) {
-//					bauer[j].makeMove(destX, destY);
-//				}
-//			}
-//			for (int j = 0; j < kˆnig.length; j++) {
-//				if (chooseX == kˆnig[j].xPos && chooseY == kˆnig[j].yPos && bauer[j].alive == true) {
-//					bauer[j].makeMove(destX, destY);
-//				}
-//			}
-//			choose = true;
-//		}
-//	}
-		
-	
+
 
 	/**
 	 * Outputs all Pieces on the board
@@ -135,6 +99,7 @@ public class ChessBoard extends Application {
 			 dame[i].getAll();
 			 for(int i = 0; i < kˆnig.length; i++)
 			 kˆnig[i].getAll();
+			 System.out.println();
 	}
 
 
@@ -234,12 +199,8 @@ public class ChessBoard extends Application {
 							nextType(j,15);
 							typeSelect = 0;
 							break;
-						} // Switch End
-					} // 16x Loop End
-				} // 2x Loop End
-
+				} // Switch End
+			} // 16x Loop End
+		} // 2x Loop End
 	}
-	
-
-
 }
