@@ -6,15 +6,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class anmeldeController {
 
-    @FXML
+	Label label = new Label("DICK");
+
+	@FXML
     private PasswordField passwort;
 
     @FXML
@@ -55,9 +59,15 @@ public class anmeldeController {
     	Pane regisPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regis.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
     	Stage regisStage = new Stage();
     	regisStage.setScene(new Scene(regisPane));//erstellt das Fenster
-    	regisStage.show();//Zeigt das Fenster welches man erstellt hat an
+    	//regisStage.show();//Zeigt das Fenster welches man erstellt hat an
     	regisStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
     	regisStage.setTitle("Registrierung");
+    	
+        label.setFont(new Font("Arial", 10));
+        label.setLayoutX(60);
+        label.setLayoutY(135);
+        regisPane.getChildren().add(label);
+        regisStage.show();
     }
 
     @FXML

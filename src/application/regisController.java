@@ -12,6 +12,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class regisController {
+	
+	static anmeldeController anmelde = new anmeldeController();
 
 	public String benutzer;
 	public String passwort;
@@ -29,6 +31,9 @@ public class regisController {
     	Datenbank.createTable();
     	Datenbank.post(benutzer, passwort);
     	abbrechen(event);
+    	anmelde.label.setText("Registrierung erfolgreich");
+    	
+
     }
 
     @FXML

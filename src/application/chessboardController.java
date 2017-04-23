@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class chessboardController {
-	
 
+	
     @FXML
     void a1(ActionEvent event) {
     	int xPos = 1;
