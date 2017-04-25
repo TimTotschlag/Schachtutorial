@@ -32,8 +32,17 @@ public class regisController {
     	benutzer = regisname.getText();
     	passwort = regispasswort.getText();
     	Datenbank.createTable();
-    	Datenbank.post(benutzer, passwort);
-    	abbrechen(event);
+    	int erfolgreich = Datenbank.post(benutzer, passwort);
+    	if(erfolgreich == 1){
+    		anmeldeController.regisPane.getChildren().add(regiscomp);
+    		Thread.sleep(3000);
+    		abbrechen(event);
+    	}
+    	else{
+    		anmeldeController.regisPane.getChildren().add(regisIncom);
+    		//Thread.sleep(3000);
+    		//abbrechen(event);
+    	}
     }
 
     @FXML
@@ -42,22 +51,30 @@ public class regisController {
     }
 
      static void registerComplete() throws Exception {
-		Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regiserfolg.fxml"));
+		/*Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regiserfolg.fxml"));
     	Stage erfolgStage = new Stage();
     	erfolgStage.setScene(new Scene(erfolgPane));
     	erfolgStage.show();
     	erfolgStage.setResizable(false);
     	Thread.sleep(3000);  //paused the windows for 3 seconds
-    	erfolgStage.close();  //close the windows
+    	erfolgStage.close();  //close the windows*/
+    	regiscomp.setFont(new Font("Arial", 10));
+    	regiscomp.setLayoutX(100);
+    	regiscomp.setLayoutY(100);
+    	regiscomp.setStyle("-fx-text-fill: red");
     }
 
     static void registrationIncomplete() throws Exception {
-		Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regisfehlg.fxml"));
+		/*Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regisfehlg.fxml"));
     	Stage erfolgStage = new Stage();
     	erfolgStage.setScene(new Scene(erfolgPane));
     	erfolgStage.show();
     	erfolgStage.setResizable(false);
     	Thread.sleep(3000);  //paused the windows for 3 seconds
-    	erfolgStage.close();  //close the windows
+    	erfolgStage.close();  //close the windows*/
+    	regisIncom.setFont(new Font("Arial", 10));
+    	regisIncom.setLayoutX(75);
+    	regisIncom.setLayoutY(150);
+    	regisIncom.setStyle("-fx-text-fill: red");
     }
 }

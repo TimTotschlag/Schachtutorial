@@ -18,7 +18,6 @@ public class anmeldeController {
 
 	Label anmeldebenachr = new Label("Benutzer oder Passwort falsch!");
 	public static Pane regisPane = new Pane();
-	static Stage regisStage = new Stage();
 
 	@FXML
     private PasswordField passwort;
@@ -65,6 +64,7 @@ public class anmeldeController {
     @FXML
     void registrieren(ActionEvent event) throws Exception {
     	regisPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regis.fxml"));
+    	Stage regisStage = new Stage();
     	regisStage.setScene(new Scene(regisPane));
     	regisStage.setResizable(false);
     	regisStage.setTitle("Registrierung");
