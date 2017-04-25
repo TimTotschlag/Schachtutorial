@@ -17,8 +17,13 @@ import java.sql.ResultSet;
 
 //start with the Database class, 4 methods
 public class Datenbank {
+	
 
-	//method that connect to the MySQL database called "schachbenutzer"
+	/**
+	 * method that connect to the MySQL database called "schachbenutzer"
+	 * @return conn
+	 * @throws Exception
+	 */
 	public static Connection getConnection() throws Exception {
 
 			try {
@@ -64,9 +69,12 @@ public class Datenbank {
 			//return nothing if we got errors
 			return null;
 		}
+	
 
-
-	//method that create the tables logindaten (3 columns) and ueberpruefung (2 columns) 
+	/**
+	 * method that create the tables logindaten (3 columns) and ueberpruefung (2 columns)
+	 * @throws Exception
+	 */
 	public static void createTable() throws Exception {
 			
 		//try to use the code
@@ -95,7 +103,12 @@ public class Datenbank {
 		}
 
 
-	//method that gets the entered username and password from the "regis.Controller" class to insert them into the "logindaten" table
+	/**
+	 * method that gets the entered username and password from the "regis.Controller" class to insert them into the "logindaten" table
+	 * @param benutzer
+	 * @param passwort
+	 * @throws Exception
+	 */
 	public static void post(String benutzer, String passwort) throws Exception{
 		
 		//varchar with "benutzer" String from class regisController
@@ -131,7 +144,11 @@ public class Datenbank {
 	}
 
 
-	//method that gives out the stored information from the table "logindaten" from the database "schachbenutzer"
+	/**
+	 * method that gives out the stored information from the table "logindaten" from the database "schachbenutzer"
+	 * @return
+	 * @throws Exception
+	 */
 	public static String get() throws Exception {
 		
 			//tries to use code
@@ -170,7 +187,12 @@ public class Datenbank {
 
 		}
 
-	//method that stores the password from login into the "ueberpruefung" table into the column ueberpruefung
+	
+	/**
+	 * method that stores the password from login into the "ueberpruefung" table into the column ueberpruefung
+	 * @param pass
+	 * @throws Exception
+	 */
 	public static void ueberpruefen(String pass) throws Exception{
 		
 		//var2 is the password that we got from the anmeldeController class
@@ -197,7 +219,13 @@ public class Datenbank {
 		
 	}
 	
-	//gets the password from table logindaten from the column with the right user
+	
+	/**
+	 * gets the password from table logindaten from the column with the right user
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
 	public static String getoriginalpassword(String user) throws Exception {
 		try {
 			
@@ -239,7 +267,11 @@ public class Datenbank {
 
 	}
 	
-	//method that delete the content in the column passwordcheck from the table ueberpruefung
+	
+	/**
+	 * method that delete the content in the column passwordcheck from the table ueberpruefung
+	 * @throws Exception
+	 */
 	public static void pruefinhaltloeschen() throws Exception{
 	
 		//tries to execute the code
