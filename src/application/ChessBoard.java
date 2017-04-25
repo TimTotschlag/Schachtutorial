@@ -7,6 +7,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class ChessBoard extends Application {
+	
+	static Pane mainPane = new Pane();
+
 
 	static boolean choose = true;
 	static int chooseX;
@@ -30,14 +33,13 @@ public class ChessBoard extends Application {
 		Application.launch(args);
 	}
 
-
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Pane mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
+		mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
 		primaryStage.setScene(new Scene(mainPane)); //erstellt das Fenster
-		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
 		primaryStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
 		primaryStage.setTitle("Sachtutorial");
+		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
 	}
 
 	static void chooseMove(int xPos, int yPos){

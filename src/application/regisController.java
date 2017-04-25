@@ -6,14 +6,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class regisController {
-	
-	static anmeldeController anmelde = new anmeldeController();
+
+	static Label regiscomp = new Label("Registrierung erfolgreich");
+	static Label regisIncom = new Label("Benutzer schon vorhanden!");
 
 	public String benutzer;
 	public String passwort;
@@ -31,9 +34,6 @@ public class regisController {
     	Datenbank.createTable();
     	Datenbank.post(benutzer, passwort);
     	abbrechen(event);
-    	anmelde.label.setText("Registrierung erfolgreich");
-    	
-
     }
 
     @FXML
@@ -41,8 +41,7 @@ public class regisController {
     	((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
-    static void registerComplete() throws Exception {
-    	//create a window
+     static void registerComplete() throws Exception {
 		Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regiserfolg.fxml"));
     	Stage erfolgStage = new Stage();
     	erfolgStage.setScene(new Scene(erfolgPane));
@@ -50,11 +49,9 @@ public class regisController {
     	erfolgStage.setResizable(false);
     	Thread.sleep(3000);  //paused the windows for 3 seconds
     	erfolgStage.close();  //close the windows
-    	//window finished
     }
 
     static void registrationIncomplete() throws Exception {
-    	//create a window
 		Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regisfehlg.fxml"));
     	Stage erfolgStage = new Stage();
     	erfolgStage.setScene(new Scene(erfolgPane));
@@ -62,7 +59,5 @@ public class regisController {
     	erfolgStage.setResizable(false);
     	Thread.sleep(3000);  //paused the windows for 3 seconds
     	erfolgStage.close();  //close the windows
-    	//window finished
-
     }
 }
