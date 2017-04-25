@@ -33,9 +33,11 @@ public class anmeldeController {
     	hauptStage.setScene(new Scene(hauptPane));
     	hauptStage.setTitle("Hauptseite");
     	hauptStage.setResizable(false);
+    	hauptStage.show();
+    	((Node)(event.getSource())).getScene().getWindow().hide();
 
 
-    	String user = benutzer.getText();
+    	/*String user = benutzer.getText();
     	String pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
 
@@ -58,7 +60,7 @@ public class anmeldeController {
     		anmeldebenachr.setStyle("-fx-text-fill: red");
             ChessBoard.mainPane.getChildren().add(anmeldebenachr);
 
-    	}
+    	}*/
     }
 
 

@@ -9,39 +9,50 @@ public class Bauer extends ChessPieces {
 	}
 
 	/**
-	 *
-	 * @param xPos
-	 * @param yPos
-	 * @param destX
-	 * @param destY
+	 *Defines Moves for Bauer
+	 * @param xPos Initial X Position
+	 * @param yPos Initial Y Position
+	 * @param destX Final X position
+	 * @param destY Final Y Position
 	 * @return
 	 */
 	boolean isValid(int xPos, int yPos, int destX, int destY) {
 		boolean valid = false;
+		
+		//Moves White
 		if(this.color == "Weiﬂ"){
+		//Moving 2 Tiles
 		if (firstMove == true && destY - yPos == -2 && destX == xPos) {
 			valid = true;
 			this.firstMove = false;
 		}
+		//Moving 1 Tile
 		if (destX == xPos && destY - yPos == -1) {
 			valid = true;
 			this.firstMove = false;
 		}
-		if (destX == xPos + 1 || destX == xPos-1 && destY == yPos -1){
-			valid = isValidLoop(valid);
+		//Moving Diagonal if enemy is there
+		if ((destX == xPos + 1 || destX == xPos-1) && destY == yPos -1){
+			valid = isValidLoop(destX, destY, valid);
 		}
 		return valid;
-		} else {
+		} 
+		
+		//Moves Black
+		else {
+		//Moving 2 Tiles
 		if (firstMove == true && destY - yPos == 2 && destX == xPos) {
 			valid = true;
 			this.firstMove = false;
 		}
+		//Moving 1 Tile
 		if (destX == xPos && destY - yPos == 1) {
 			valid = true;
 			this.firstMove = false;
 		}
-		if (destX == xPos + 1 || destX == xPos-1 && destY == yPos +1){
-			valid = isValidLoop(valid);
+		//Moving Diagonal
+		if ((destX == xPos + 1 || destX == xPos-1) && destY == yPos +1){
+			valid = isValidLoop(destX, destY,valid);
 		}
 		}
 		return valid;
@@ -50,8 +61,8 @@ public class Bauer extends ChessPieces {
 
 	/**
 	 * Sets new X and Y Positions for this Piece if Destination is Valid
-	 * @param destX
-	 * @param destY
+	 * @param destX Final X Position
+	 * @param destY Final Y Position
 	 */
 	void movePiece(int destX, int destY){
 		if(isValid(this.xPos,this.yPos,destX,destY) == true){
@@ -62,11 +73,11 @@ public class Bauer extends ChessPieces {
 
 	/**
 	 * If move is valid, move piece
-	 * @param destX
-	 * @param destY
+	 * @param destX Final X Position
+	 * @param destY Final Y Position
 	 */
 	void makeMove(int destX, int destY){
-		if(boardCheck(destX,destY) == true){
+		if(boardCheck(destX,destY) == true && collisionCheck(destX,destY) == true){
 			if(attack(destX, destY) == true)
 				this.movePiece(destX, destY);
 			else
@@ -78,9 +89,9 @@ public class Bauer extends ChessPieces {
 	 * Loop used in the is Valid Method
 	 * Cycles through all pieces
 	 * @param valid
-	 * @return
+	 * @return 
 	 */
-	boolean isValidLoop(boolean valid){
+	boolean isValidLoop(int xPos, int yPos, boolean valid){
 		for (int j = 0; j < ChessBoard.bauer.length; j++)
 			if (xPos == ChessBoard.bauer[j].xPos && yPos == ChessBoard.bauer[j].yPos)
 				valid = true;

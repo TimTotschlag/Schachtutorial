@@ -10,11 +10,11 @@ public class Dame extends ChessPieces {
 
 	/**
 	 * Checks if moving in a crossed or horizontal line
-	 * @param xPos
-	 * @param yPos
-	 * @param destX
-	 * @param destY
-	 * @return
+	 * @param xPos Initial X Position
+	 * @param yPos Initial Y Position
+	 * @param destX Final X Position
+	 * @param destY Final Y Position
+	 * @return True if move is valid
 	 */
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
@@ -27,8 +27,8 @@ public class Dame extends ChessPieces {
 
 	/**
 	 * Sets new X and Y Positions for this Piece if Destination is Valid
-	 * @param destX
-	 * @param destY
+	 * @param destX Final X Position
+	 * @param destY Final Y Position
 	 */
 	void movePiece(int destX, int destY){
 		if(isValid(this.xPos,this.yPos,destX,destY) == true){
@@ -39,8 +39,8 @@ public class Dame extends ChessPieces {
 
 	/**
 	 * If move is valid, move piece
-	 * @param destX
-	 * @param destY
+	 * @param destX Final X Position
+	 * @param destY Final Y Position
 	 */
 	void makeMove(int destX, int destY){
 		if(boardCheck(destX,destY) == true && collisionCheck(destX,destY) == true){

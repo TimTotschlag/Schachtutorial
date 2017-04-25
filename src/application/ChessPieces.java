@@ -18,7 +18,7 @@ public class ChessPieces {
 
 
 	/**
-	 * Setting all attributes for this object
+	 * Setting all Attributes 
 	 * @param xPosId
 	 * @param yPosId
 	 * @param typeId
@@ -64,7 +64,7 @@ public class ChessPieces {
 
 	/**
 	 * Cycles through every Piece and Checks if it is on this Piece's Destination to take it off the playing field
-	 * If same Team move is not valid
+	 * If same Team, move is not valid
 	 * @param destX
 	 * @param destY
 	 * @return
