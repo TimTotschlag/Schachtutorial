@@ -104,7 +104,7 @@ public class Datenbank {
 
 
 	/**
-	 * method that gets the entered username and password from the "regis.Controller" class to insert them into the "logindaten" table
+	 * method that gets the entered  username and password from the "regis.Controller" class to insert them into the "logindaten" table
 	 * @param benutzer
 	 * @param passwort
 	 * @throws Exception
