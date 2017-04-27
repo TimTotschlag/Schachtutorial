@@ -3,15 +3,11 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 public class regisController {
 
@@ -35,13 +31,11 @@ public class regisController {
     	int erfolgreich = Datenbank.post(benutzer, passwort);
     	if(erfolgreich == 1){
     		anmeldeController.regisPane.getChildren().add(regiscomp);
-    		Thread.sleep(3000);
-    		abbrechen(event);
+    		anmeldeController.regisPane.getChildren().remove(regisIncom);
     	}
     	else{
     		anmeldeController.regisPane.getChildren().add(regisIncom);
-    		//Thread.sleep(3000);
-    		//abbrechen(event);
+    		anmeldeController.regisPane.getChildren().remove(regiscomp);
     	}
     }
 
@@ -51,30 +45,16 @@ public class regisController {
     }
 
      static void registerComplete() throws Exception {
-		/*Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regiserfolg.fxml"));
-    	Stage erfolgStage = new Stage();
-    	erfolgStage.setScene(new Scene(erfolgPane));
-    	erfolgStage.show();
-    	erfolgStage.setResizable(false);
-    	Thread.sleep(3000);  //paused the windows for 3 seconds
-    	erfolgStage.close();  //close the windows*/
     	regiscomp.setFont(new Font("Arial", 10));
-    	regiscomp.setLayoutX(100);
-    	regiscomp.setLayoutY(100);
+    	regiscomp.setLayoutX(60);
+    	regiscomp.setLayoutY(135);
     	regiscomp.setStyle("-fx-text-fill: red");
     }
 
     static void registrationIncomplete() throws Exception {
-		/*Pane erfolgPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regisfehlg.fxml"));
-    	Stage erfolgStage = new Stage();
-    	erfolgStage.setScene(new Scene(erfolgPane));
-    	erfolgStage.show();
-    	erfolgStage.setResizable(false);
-    	Thread.sleep(3000);  //paused the windows for 3 seconds
-    	erfolgStage.close();  //close the windows*/
     	regisIncom.setFont(new Font("Arial", 10));
-    	regisIncom.setLayoutX(75);
-    	regisIncom.setLayoutY(150);
+    	regisIncom.setLayoutX(60);
+    	regisIncom.setLayoutY(135);
     	regisIncom.setStyle("-fx-text-fill: red");
     }
 }
