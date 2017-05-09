@@ -8,23 +8,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class hauptmenueController {
 	
 
 	    static AnchorPane chessPane = new AnchorPane();
-
+		
 	
-	static void bild() {
-		Image img = new Image("https://www.spreadshirt.de/image-server/v1/designs/16144300,width=178,height=178/schachfigur-bauer.png");
-		ImageView Bauer = new ImageView(img);
-		Bauer.setFitHeight(40);
-		Bauer.setFitWidth(50);
-		Bauer.setLayoutX(80);
-		Bauer.setLayoutY(330);
-		chessPane.getChildren().add(Bauer);
-	}
+
 
 
     @FXML
@@ -36,7 +29,7 @@ public class hauptmenueController {
     	chessboard.setScene(new Scene(chessPane));
     	chessboard.setTitle("Schachtutorial");
     	chessboard.setResizable(false);
-    	bild();
+    	chessboardController.bild();
     	chessboard.show();
     	((Node)(event.getSource())).getScene().getWindow().hide();
     	
@@ -48,7 +41,13 @@ public class hauptmenueController {
     }
 
     @FXML
-    void zurück(ActionEvent event) {
+    void zurück(ActionEvent event) throws Exception {
+    	ChessBoard.mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml"));
+		Stage primaryStage = new Stage();
+		primaryStage.setScene(new Scene(ChessBoard.mainPane)); 
+		primaryStage.show();
+		primaryStage.setResizable(false);
+		primaryStage.setTitle("Sachtutorial");
     	((Node)(event.getSource())).getScene().getWindow().hide();
     }
     
