@@ -38,7 +38,7 @@ public class ChessBoard extends Application {
 		mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
 		primaryStage.setScene(new Scene(mainPane)); //erstellt das Fenster
 		primaryStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
-		primaryStage.setTitle("Sachtutorial");
+		primaryStage.setTitle("Schach");
 		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
 	}
 

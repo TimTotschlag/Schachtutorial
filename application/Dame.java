@@ -43,7 +43,7 @@ public class Dame extends ChessPieces {
 	 * @param destY Final Y Position
 	 */
 	void makeMove(int destX, int destY){
-		if(boardCheck(destX,destY) == true && collisionCheck(destX,destY) == true){
+		if(boardCheck(destX,destY) == true && collisionCheck(destX,destY) == true && checkPlayer() == true){
 			if(attack(destX, destY) == true)
 				this.movePiece(destX, destY);
 			else

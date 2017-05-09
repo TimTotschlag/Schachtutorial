@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 //MySql Library to give all information from a table
 import java.sql.ResultSet;
 
-import javafx.scene.text.Font;
 
 //MySQL Library to give out the Table as Array List
 //import java.util.ArrayList;
