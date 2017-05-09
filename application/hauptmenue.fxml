@@ -5,12 +5,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.hauptmenueController">
    <children>
-      <SplitPane dividerPositions="0.0896358543417367" orientation="VERTICAL" prefHeight="359.0" prefWidth="338.0">
+      <SplitPane dividerPositions="0.07282913165266107" orientation="VERTICAL" prefHeight="359.0" prefWidth="338.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="6.0" layoutY="3.0" text="Hallo" />
+               </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <Label layoutX="77.0" layoutY="14.0" text="Schachtutorial">
@@ -23,7 +25,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="115.0" layoutY="193.0" mnemonicParsing="false" onAction="#Szenarien" text="Szenarien">
+                  <Button layoutX="115.0" layoutY="193.0" mnemonicParsing="false" onAction="#Szenarien" prefHeight="42.0" prefWidth="107.0" text="Tutorial">
                      <font>
                         <Font size="19.0" />
                      </font>

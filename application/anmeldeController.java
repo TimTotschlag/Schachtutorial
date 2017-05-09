@@ -18,6 +18,10 @@ public class anmeldeController {
 
 	Label anmeldebenachr = new Label("Benutzer oder Passwort falsch!");
 	public static Pane regisPane = new Pane();
+	static String user;
+	static String pass;
+    static Label anmeldename = new Label();
+	
 
 	@FXML
     private PasswordField passwort;
@@ -32,10 +36,9 @@ public class anmeldeController {
     	hauptStage.setScene(new Scene(hauptPane));
     	hauptStage.setTitle("Hauptseite");
     	hauptStage.setResizable(false);
-
-
-    	String user = benutzer.getText();
-    	String pass = passwort.getText();
+    	
+    	user = benutzer.getText();
+    	pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
 
     	String pwueberpruefung = Datenbank.get();
@@ -58,6 +61,10 @@ public class anmeldeController {
             ChessBoard.mainPane.getChildren().add(anmeldebenachr);
 
     	}
+    	
+    	anmeldename = new Label(user);
+    	hauptPane.getChildren().add(anmeldename);
+    	
     }
 
 
@@ -80,5 +87,13 @@ public class anmeldeController {
     void verlassen(ActionEvent event) {
     	Platform.exit();
     }
+    
+    static void anmeldeName() throws Exception {
+    anmeldename.setFont(new Font("Arial", 10));
+    anmeldename.setLayoutX(50);
+    anmeldename.setLayoutY(12);
+    anmeldename.setStyle("-fx-text-fill: black");
+   }
+
 
 }
