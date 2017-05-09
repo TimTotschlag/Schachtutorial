@@ -2,13 +2,11 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class chessboardController {
-	
 
-	
+
+
     @FXML
     void a1(ActionEvent event) {
     	int xPos = 1;
@@ -217,7 +215,7 @@ public class chessboardController {
     	int xPos = 4;
     	int yPos = 3;
     	ChessBoard.chooseMove(xPos, yPos);
-    }	
+    }
 
     @FXML
     void d7(ActionEvent event) {
@@ -348,14 +346,14 @@ public class chessboardController {
     @FXML
     void g1(ActionEvent event) {
     	int xPos = 7;
-    	int yPos = 8;	
+    	int yPos = 8;
     	ChessBoard.chooseMove(xPos, yPos);
     }
 
     @FXML
     void g2(ActionEvent event) {
     	int xPos = 7;
-    	int yPos = 7;	
+    	int yPos = 7;
     	ChessBoard.chooseMove(xPos, yPos);
     }
 
