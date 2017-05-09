@@ -1,7 +1,5 @@
 package application;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,13 +11,8 @@ import javafx.stage.Stage;
 
 public class hauptmenueController {
 	
-
 	    static AnchorPane chessPane = new AnchorPane();
-		
-	
-
-
-
+	    
     @FXML
     void Start(ActionEvent event) throws Exception {
     	ChessBoard.fullBoard();
@@ -29,7 +22,6 @@ public class hauptmenueController {
     	chessboard.setScene(new Scene(chessPane));
     	chessboard.setTitle("Schachtutorial");
     	chessboard.setResizable(false);
-    	chessboardController.bild();
     	chessboard.show();
     	((Node)(event.getSource())).getScene().getWindow().hide();
     	

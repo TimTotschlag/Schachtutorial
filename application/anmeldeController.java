@@ -32,7 +32,6 @@ public class anmeldeController {
     	hauptStage.setScene(new Scene(hauptPane));
     	hauptStage.setTitle("Hauptseite");
     	hauptStage.setResizable(false);
-    	hauptStage.show();
 
 
     	String user = benutzer.getText();

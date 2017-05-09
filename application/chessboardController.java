@@ -7,26 +7,12 @@ import javafx.scene.image.ImageView;
 
 public class chessboardController {
 	
-	static Image img = new Image("https://www.spreadshirt.de/image-server/v1/designs/16144300,width=178,height=178/schachfigur-bauer.png");
-	static ImageView Bauer = new ImageView(img);
-
-	
-	static void bild() {
-		//Image img = new Image("https://www.spreadshirt.de/image-server/v1/designs/16144300,width=178,height=178/schachfigur-bauer.png");
-		//ImageView Bauer = new ImageView(img);
-		Bauer.setFitHeight(40);
-		Bauer.setFitWidth(50);
-		Bauer.setLayoutX(80);
-		Bauer.setLayoutY(330);
-		hauptmenueController.chessPane.getChildren().add(Bauer);
-	}
 
 	
     @FXML
     void a1(ActionEvent event) {
     	int xPos = 1;
     	int yPos = 8;
-    	hauptmenueController.chessPane.getChildren().remove(Bauer);
     	ChessBoard.chooseMove(xPos, yPos);
     }
 
