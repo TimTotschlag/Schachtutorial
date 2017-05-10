@@ -37,7 +37,7 @@ public class ChessBoard extends Application {
 		primaryStage.setScene(new Scene(mainPane)); //erstellt das Fenster
 		primaryStage.show(); //Zeigt das Fenster welches man erstellt hat an
 		primaryStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
-		primaryStage.setTitle("Sachtutorial");
+		primaryStage.setTitle("Schachtutorial");
 	}
 
 	static void chooseMove(int xPos, int yPos){
