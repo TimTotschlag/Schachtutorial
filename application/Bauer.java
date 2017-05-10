@@ -112,4 +112,5 @@ public class Bauer extends ChessPieces {
 				valid = true;
 		return valid;
 	}
+	
 }
