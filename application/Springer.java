@@ -2,23 +2,25 @@ package application;
 
 import java.lang.Math;
 
-public class Läufer extends ChessPieces {
+public class Springer extends ChessPieces {
 
-	Läufer(int a,int b,int c,int d){
+	Springer(int a,int b,int c,int d){
 		super(a,b,c,d);
 	}
 
 	/**
-	 * Checks if moving in a crossed Line
-	 * @param xPos
-	 * @param yPos
-	 * @param destX
-	 * @param destY
+	 * Checks if moving in a horizontal line
+	  * @param xPos Initial X Position
+	 * @param yPos Initial Y Position
+	 * @param destX Final X Position
+	 * @param destY Final Y Position
 	 * @return
 	 */
 	boolean isValid(int xPos, int yPos,int destX,int destY){
 		boolean valid = false;
-		if(Math.abs(destX - xPos) == Math.abs(destY - yPos))
+		if(Math.abs(destX - xPos) == 2 && Math.abs(destY - yPos) == 1)
+			valid = true;
+		if(Math.abs(destX - xPos) == 1 && Math.abs(destY - yPos) == 2)
 			valid = true;
 		return  valid;
 	}
@@ -37,11 +39,11 @@ public class Läufer extends ChessPieces {
 
 	/**
 	 * If move is valid, move piece
-	 * @param destX
-	 * @param destY
+	* @param destX Final X Position
+	 * @param destY Final Y Position
 	 */
 	void makeMove(int destX, int destY){
-		if(boardCheck(destX,destY) == true && collisionCheck(destX,destY) == true){
+		if(boardCheck(destX,destY) == true && checkPlayer() == true){
 			if(attack(destX, destY) == true)
 				this.movePiece(destX, destY);
 			else

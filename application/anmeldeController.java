@@ -16,7 +16,11 @@ import javafx.stage.Stage;
 
 public class anmeldeController {
 
-	Label label = new Label("DICK");
+	Label anmeldebenachr = new Label("Benutzer oder Passwort falsch!");
+	public static Pane regisPane = new Pane();
+	static String user;
+	static String pass;
+	
 
 	@FXML
     private PasswordField passwort;
@@ -30,13 +34,10 @@ public class anmeldeController {
     	Stage hauptStage = new Stage();
     	hauptStage.setScene(new Scene(hauptPane));
     	hauptStage.setTitle("Hauptseite");
-    	hauptStage.show();
     	hauptStage.setResizable(false);
-    	((Node)(event.getSource())).getScene().getWindow().hide();
-    }
-
-    	/*String user = benutzer.getText();
-    	String pass = passwort.getText();
+    	
+    	user = benutzer.getText();
+    	pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
 
     	String pwueberpruefung = Datenbank.get();
@@ -46,27 +47,29 @@ public class anmeldeController {
     	if(pwueberpruefung.equals(pwlogindaten)){
     		Datenbank.pruefinhaltloeschen();
     		System.out.println("Login korrekt!");
+        	hauptStage.show();
+        	((Node)(event.getSource())).getScene().getWindow().hide();
 
     	}
     	else {
-    		System.out.println("Falscher Username oder Passwort");
     		Datenbank.pruefinhaltloeschen();
+    		anmeldebenachr.setFont(new Font("Arial", 10));
+    		anmeldebenachr.setLayoutX(143);
+    		anmeldebenachr.setLayoutY(150);
+    		anmeldebenachr.setStyle("-fx-text-fill: red");
+            ChessBoard.mainPane.getChildren().add(anmeldebenachr);
+
     	}
-    }*/
+    }
+
 
     @FXML
     void registrieren(ActionEvent event) throws Exception {
-    	Pane regisPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regis.fxml")); //läd die fxml Datei an welches die Daten des Fensters enthält
+    	regisPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("regis.fxml"));
     	Stage regisStage = new Stage();
-    	regisStage.setScene(new Scene(regisPane));//erstellt das Fenster
-    	//regisStage.show();//Zeigt das Fenster welches man erstellt hat an
-    	regisStage.setResizable(false); //Die größe des Fensters kann nicht verändert werden
+    	regisStage.setScene(new Scene(regisPane));
+    	regisStage.setResizable(false);
     	regisStage.setTitle("Registrierung");
-    	
-        label.setFont(new Font("Arial", 10));
-        label.setLayoutX(60);
-        label.setLayoutY(135);
-        regisPane.getChildren().add(label);
         regisStage.show();
     }
 

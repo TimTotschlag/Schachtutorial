@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tutorialController">
+   <children>
+      <Label layoutX="110.0" layoutY="14.0" text="Tutorial" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="207.0" layoutY="261.0" mnemonicParsing="false" text="Hauptmenü" />
+      <MenuButton layoutX="111.0" layoutY="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Figuren">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#Bauer" text="Bauer" />
+          <MenuItem mnemonicParsing="false" onAction="#Springer" text="Springer" />
+            <MenuItem mnemonicParsing="false" onAction="#Läufer" text="Läufer" />
+            <MenuItem mnemonicParsing="false" onAction="#Turm" text="Turm" />
+            <MenuItem mnemonicParsing="false" onAction="#König" text="König" />
+            <MenuItem mnemonicParsing="false" onAction="#Dame" text="Dame" />
+        </items>
+      </MenuButton>
+      <Text layoutX="11.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ziel des Schachspiels ist es die gegnerische Figur des Königs matt zu setzen. Dies bedeutet ihn mit einer Figur anzugreifen (matt setzen) und er gleichzeitig keine Fluchtmöglichkeit mehr besitzt. Greift man den König an, sagt man dem Gegner das Wort Schach dazu, welches das persische Wort für König ist. Ist der Gegner geschlagen, sagt man Schachmatt, was soviel bedeutet, wie der König ist tot." wrappingWidth="279.0" />
+   </children>
+</AnchorPane>

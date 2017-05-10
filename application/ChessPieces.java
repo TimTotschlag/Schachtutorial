@@ -1,13 +1,12 @@
 package application;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 //import java.util.Arrays;
 
 
 public class ChessPieces {
 
+	static int turn = 0;
 	boolean alive = true;
 	int xPos;
 	int yPos;
@@ -15,12 +14,12 @@ public class ChessPieces {
 	String color;
 
 	static void bild(){
-    	
+
     }
 
 
 	/**
-	 * Setting all attributes for this object
+	 * Setting all Attributes 
 	 * @param xPosId
 	 * @param yPosId
 	 * @param typeId
@@ -66,7 +65,7 @@ public class ChessPieces {
 
 	/**
 	 * Cycles through every Piece and Checks if it is on this Piece's Destination to take it off the playing field
-	 * If same Team move is not valid
+	 * If same Team, move is not valid
 	 * @param destX
 	 * @param destY
 	 * @return
@@ -186,4 +185,22 @@ public class ChessPieces {
 				valid = false;
 		return valid;
 	}
+	
+	/**
+	 * Counting every Turn and determining whose Turn it currently is
+	 * @return
+	 */
+	boolean checkPlayer(){
+		if(this.color == "Weiﬂ" && turn % 2 == 0){
+			turn++;
+			return true;
+		}
+		if(this.color == "Schwarz" && turn % 2 == 1){
+			turn++;
+			return true;
+		}
+		else
+			System.out.println("invalid");
+	return false;
+}
 }
