@@ -24,7 +24,7 @@ public class regisController {
     private TextField regisname;
 
     @FXML
-    void regis(ActionEvent event) throws Exception {
+    void registrieren(ActionEvent event) throws Exception {
     	benutzer = regisname.getText(); //der Text der in das Feld geschrieben wird, wird der Variable Benutzer zugefügt
     	passwort = regispasswort.getText();
     	Datenbank.createTable();
