@@ -14,7 +14,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="207.0" layoutY="261.0" mnemonicParsing="false" text="Hauptmenü" />
+      <Button layoutX="207.0" layoutY="261.0" mnemonicParsing="false" onAction="#zurück" text="Hauptmenü" />
       <MenuButton layoutX="111.0" layoutY="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Figuren">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#Bauer" text="Bauer" />
