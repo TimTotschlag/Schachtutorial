@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.chessboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.chessboardController">
    <children>
       <GridPane prefHeight="600.0" prefWidth="800.0">
         <columnConstraints>
@@ -113,6 +113,7 @@
             <Label alignment="CENTER" prefHeight="148.0" prefWidth="175.0" style="-fx-background-color: Grey;" text="h" GridPane.columnIndex="8" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" onAction="#a7" prefHeight="126.0" prefWidth="154.0" style="-fx-background-color: Black; -fx-background-radius: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label alignment="CENTER" prefHeight="129.0" prefWidth="181.0" style="-fx-background-color: Grey;" GridPane.rowIndex="8" />
+            <Button mnemonicParsing="false" onAction="#zurück" prefHeight="179.0" prefWidth="88.0" style="-fx-background-color: Grey; -fx-border-color: White;" text="Hauptmenü" textFill="WHITE" GridPane.rowIndex="8" />
          </children>
       </GridPane>
    </children>
