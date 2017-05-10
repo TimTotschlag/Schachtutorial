@@ -20,7 +20,6 @@ public class anmeldeController {
 	public static Pane regisPane = new Pane();
 	static String user;
 	static String pass;
-    static Label anmeldename = new Label();
 	
 
 	@FXML
@@ -61,10 +60,6 @@ public class anmeldeController {
             ChessBoard.mainPane.getChildren().add(anmeldebenachr);
 
     	}
-    	
-    	anmeldename = new Label(user);
-    	hauptPane.getChildren().add(anmeldename);
-    	
     }
 
 
@@ -87,13 +82,5 @@ public class anmeldeController {
     void verlassen(ActionEvent event) {
     	Platform.exit();
     }
-    
-    static void anmeldeName() throws Exception {
-    anmeldename.setFont(new Font("Arial", 10));
-    anmeldename.setLayoutX(50);
-    anmeldename.setLayoutY(12);
-    anmeldename.setStyle("-fx-text-fill: black");
-   }
-
 
 }

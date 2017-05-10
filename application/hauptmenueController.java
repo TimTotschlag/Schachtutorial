@@ -10,9 +10,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class hauptmenueController {
-	
+
 	    static AnchorPane chessPane = new AnchorPane();
-	    
+
     @FXML
     void Start(ActionEvent event) throws Exception {
     	ChessBoard.fullBoard();
@@ -24,24 +24,29 @@ public class hauptmenueController {
     	chessboard.setResizable(false);
     	chessboard.show();
     	((Node)(event.getSource())).getScene().getWindow().hide();
-    	
+
     }
 
     @FXML
-    void Szenarien(ActionEvent event) {
-
+    void Tutorial(ActionEvent event) throws Exception {
+    	AnchorPane tutorialPane = (AnchorPane) FXMLLoader.load(ChessBoard.class.getResource("tutorial.fxml"));
+    	Stage tutorialStage = new Stage();
+    	tutorialStage.setScene(new Scene(tutorialPane));
+    	tutorialStage.setResizable(false);
+    	tutorialStage.setTitle("Tutorial");
+    	tutorialStage.show();
     }
 
     @FXML
     void zurück(ActionEvent event) throws Exception {
     	ChessBoard.mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml"));
 		Stage primaryStage = new Stage();
-		primaryStage.setScene(new Scene(ChessBoard.mainPane)); 
+		primaryStage.setScene(new Scene(ChessBoard.mainPane));
 		primaryStage.show();
 		primaryStage.setResizable(false);
 		primaryStage.setTitle("Sachtutorial");
     	((Node)(event.getSource())).getScene().getWindow().hide();
     }
-    
+
 
 }
