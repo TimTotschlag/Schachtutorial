@@ -11,7 +11,7 @@ import javafx.scene.text.Font;
 
 public class regisController {
 
-	static Label regiscomp = new Label("Registrierung erfolgreich");
+	static Label regiscomp = new Label("Registrierung erfolgreich"); //Label wird erstellt
 	static Label regisIncom = new Label("Benutzer schon vorhanden!");
 
 	public String benutzer;
@@ -25,13 +25,13 @@ public class regisController {
 
     @FXML
     void regis(ActionEvent event) throws Exception {
-    	benutzer = regisname.getText();
+    	benutzer = regisname.getText(); //der Text der in das Feld geschrieben wird, wird der Variable Benutzer zugefügt
     	passwort = regispasswort.getText();
     	Datenbank.createTable();
     	int erfolgreich = Datenbank.post(benutzer, passwort);
     	if(erfolgreich == 1){
-    		anmeldeController.regisPane.getChildren().add(regiscomp);
-    		anmeldeController.regisPane.getChildren().remove(regisIncom);
+    		anmeldeController.regisPane.getChildren().add(regiscomp); //fügt das Label dem Fenster zu
+    		anmeldeController.regisPane.getChildren().remove(regisIncom); //löscht ein Label vom Fenster
     	}
     	else{
     		anmeldeController.regisPane.getChildren().add(regisIncom);
@@ -41,14 +41,14 @@ public class regisController {
 
     @FXML
     void abbrechen(ActionEvent event) {
-    	((Node)(event.getSource())).getScene().getWindow().hide();
+    	((Node)(event.getSource())).getScene().getWindow().hide(); //versteckt das Fenster
     }
 
      static void registerComplete() throws Exception {
-    	regiscomp.setFont(new Font("Arial", 10));
-    	regiscomp.setLayoutX(60);
+    	regiscomp.setFont(new Font("Arial", 10)); //ändert die Schriftart und Größe
+    	regiscomp.setLayoutX(60); //Koordinaten werden verändert
     	regiscomp.setLayoutY(135);
-    	regiscomp.setStyle("-fx-text-fill: red");
+    	regiscomp.setStyle("-fx-text-fill: red"); //ändert die Farbe
     }
 
     static void registrationIncomplete() throws Exception {

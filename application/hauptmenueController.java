@@ -50,5 +50,4 @@ public class hauptmenueController {
     	((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
-
 }

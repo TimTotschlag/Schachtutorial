@@ -25,6 +25,6 @@
             <MenuItem mnemonicParsing="false" onAction="#Dame" text="Dame" />
         </items>
       </MenuButton>
-      <Text layoutX="11.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ziel des Schachspiels ist es die gegnerische Figur des Königs matt zu setzen. Dies bedeutet ihn mit einer Figur anzugreifen (matt setzen) und er gleichzeitig keine Fluchtmöglichkeit mehr besitzt. Greift man den König an, sagt man dem Gegner das Wort Schach dazu, welches das persische Wort für König ist. Ist der Gegner geschlagen, sagt man Schachmatt, was soviel bedeutet, wie der König ist tot." wrappingWidth="279.0" />
+      <Text layoutX="11.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ziel des Schachspiels ist es die gegnerische Figur des Königs matt zu setzen. Dies bedeutet ihn mit einer Figur anzugreifen (matt setzen) und er gleichzeitig keine Fluchtmöglichkeit mehr besitzt. Greift man den König an, sagt man dem Gegner das Wort Schach dazu, welches das persische Wort für König ist. Ist der Gegner geschlagen, sagt man Schachmatt, was soviel bedeutet, wie der König ist tot." textAlignment="CENTER" wrappingWidth="279.0" />
    </children>
 </AnchorPane>

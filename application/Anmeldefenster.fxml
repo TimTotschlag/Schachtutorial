@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="226.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.anmeldeController">
    <children>
       <Label layoutX="97.0" layoutY="14.0" text="Schachtutorial">
@@ -27,7 +26,6 @@
       </HBox>
       <HBox layoutX="349.0" layoutY="187.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#info" text="?" />
             <Button layoutX="448.0" layoutY="14.0" mnemonicParsing="false" onAction="#verlassen" text="verlassen" />
          </children>
       </HBox>

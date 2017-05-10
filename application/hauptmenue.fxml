@@ -10,7 +10,7 @@
    <children>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="338.0">
          <children>
-            <Label layoutX="77.0" layoutY="39.0" text="Schachtutorial" underline="true">
+            <Label layoutX="78.0" layoutY="64.0" text="Schachtutorial" underline="true">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
@@ -25,7 +25,9 @@
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button layoutX="273.0" layoutY="320.0" mnemonicParsing="false" onAction="#zurück" text="zurück" />
+            <Button layoutX="255.0" layoutY="320.0" mnemonicParsing="false" onAction="#zurück" text="abmelden" />
+            <Line endX="100.0" layoutX="168.0" layoutY="23.0" scaleX="1.8" startX="-100.0" />
+            <Label layoutX="14.0" layoutY="6.0" text="Benutzer:" />
          </children>
       </AnchorPane>
    </children>

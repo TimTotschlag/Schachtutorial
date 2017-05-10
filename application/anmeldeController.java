@@ -17,10 +17,11 @@ import javafx.stage.Stage;
 public class anmeldeController {
 
 	Label anmeldebenachr = new Label("Benutzer oder Passwort falsch!");
+	static Label benutzerlabel;
 	public static Pane regisPane = new Pane();
 	static String user;
 	static String pass;
-	
+
 
 	@FXML
     private PasswordField passwort;
@@ -35,7 +36,7 @@ public class anmeldeController {
     	hauptStage.setScene(new Scene(hauptPane));
     	hauptStage.setTitle("Hauptseite");
     	hauptStage.setResizable(false);
-    	
+
     	user = benutzer.getText();
     	pass = passwort.getText();
     	Datenbank.ueberpruefen(pass);
@@ -43,6 +44,15 @@ public class anmeldeController {
     	String pwueberpruefung = Datenbank.get();
 
     	String pwlogindaten = Datenbank.getoriginalpassword(user);
+    	
+    	benutzerlabel = new Label(user);
+		benutzerlabel.setFont(new Font("System", 12));
+		benutzerlabel.setLayoutX(67);
+		benutzerlabel.setLayoutY(6);
+		benutzerlabel.setPrefWidth(100);    //maximale breite des labels
+		benutzerlabel.setWrapText(false);   //wenn die Maximale Buchstaben Zahl erreicht wurde kürzt er das mit ... ab
+		benutzerlabel.setStyle("-fx-text-fill: black");
+		hauptPane.getChildren().add(benutzerlabel);
 
     	if(pwueberpruefung.equals(pwlogindaten)){
     		Datenbank.pruefinhaltloeschen();
@@ -73,14 +83,11 @@ public class anmeldeController {
         regisStage.show();
     }
 
-    @FXML
-    void info(ActionEvent event) {
-
-    }
 
     @FXML
     void verlassen(ActionEvent event) {
     	Platform.exit();
     }
+
 
 }
