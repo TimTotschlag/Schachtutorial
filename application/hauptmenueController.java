@@ -25,6 +25,8 @@ public class hauptmenueController {
     	chessboard.setResizable(false);
     	chessboard.show();
     	((Node)(event.getSource())).getScene().getWindow().hide();
+    	
+
 
     }
 

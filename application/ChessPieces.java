@@ -19,7 +19,7 @@ public class ChessPieces {
 
 
 	/**
-	 * Setting all Attributes 
+	 * Setting all Attributes
 	 * @param xPosId
 	 * @param yPosId
 	 * @param typeId
@@ -185,7 +185,7 @@ public class ChessPieces {
 				valid = false;
 		return valid;
 	}
-	
+
 	/**
 	 * Counting every Turn and determining whose Turn it currently is
 	 * @return

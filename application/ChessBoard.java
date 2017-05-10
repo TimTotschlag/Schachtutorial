@@ -37,10 +37,10 @@ public class ChessBoard extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		mainPane = (Pane) FXMLLoader.load(ChessBoard.class.getResource("Anmeldefenster.fxml"));//laed die notwendigen Daten aus der fxml Datei
 		primaryStage.setScene(new Scene(mainPane)); //weist die mainPane eine Scene zu
-		primaryStage.setResizable(false); //Fenster größe kann nicht verändert werden	
+		primaryStage.setResizable(false); //Fenster größe kann nicht verändert werden
 		primaryStage.setTitle("Schach"); //Titel des Fensters
 		primaryStage.show(); //Fenster wird angezeigt(ohne den Befehl wird das Fenster nicht angezeigt
-	} 
+	}
 
 	static void chooseMove(int xPos, int yPos){
 		if (choose == true){
