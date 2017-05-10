@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="140.0" layoutY="14.0" text="Die Springer" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="32.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Springer können als einzige Schachfiguren eigene und fremde Schachfiguren überspringen. Der Zug eines Springers besteht aus 2 Feldern in waagerechter oder senkrechter Richtung und ein Feld in einem 90° Winkel dazu. Also entweder 2 Felder nach links oder rechts, sowie ein Feld nach oben oder unten. Die zweite Variante wäre 2 Felder nach oben oder unten, sowie ein Feld nach links oder rechts. Die übersprungenen Felder stehen nicht unter der Kontrolle des Springers, sondern nur das Zielfeld. Ihre Stärke im Schachspiel bezieht sich vor allem auf die Schlagfähigkeit von eingemauerten Figuren." textAlignment="CENTER" wrappingWidth="347.0" />
+      <Text layoutX="274.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Position:" underline="true" wrappingWidth="75.21875" />
+      <Text layoutX="274.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwarz: b8, g8" wrappingWidth="144.435546875" />
+      <Text layoutX="274.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weiß: b1, g1" wrappingWidth="144.435546875" />
+      <ImageView fitHeight="232.0" fitWidth="256.0" layoutX="14.0" layoutY="211.0">
+         <image>
+            <Image url="@../bilder/springertutorial.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

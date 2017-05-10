@@ -193,10 +193,12 @@ public class ChessPieces {
 	boolean checkPlayer(){
 		if(this.color == "Weiﬂ" && turn % 2 == 0){
 			turn++;
+			System.out.println("Schwarz ist an der Reihe");
 			return true;
 		}
 		if(this.color == "Schwarz" && turn % 2 == 1){
 			turn++;
+			System.out.println("Weiﬂ ist an der Reihe");
 			return true;
 		}
 		else

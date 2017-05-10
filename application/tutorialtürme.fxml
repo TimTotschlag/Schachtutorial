@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="151.0" layoutY="14.0" text="Die Türme" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="87.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Türme beginnen in den Ecken des Schachbretts und sind zunächst etwas von der Grunstellung eingeengt. Sie können nur waagerecht und senkrecht gezogen werden. Im späteren Spielverlauf lassen sich mit ihnen jedoch lange Reihen kontrollieren." textAlignment="CENTER" wrappingWidth="250.740234375" />
+      <ImageView fitHeight="265.0" fitWidth="241.0" layoutX="14.0" layoutY="175.0">
+         <image>
+            <Image url="@../bilder/turmtutorial.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="274.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Position:" underline="true" wrappingWidth="75.21875" />
+      <Text layoutX="274.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwarz: a8, h8" wrappingWidth="144.435546875" />
+      <Text layoutX="274.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weiß: a1, h1" wrappingWidth="144.435546875" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="148.0" layoutY="14.0" text="Die Bauern" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="78.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Der Bauer kann nur vorwärts gehen und niemals rückwärts. Er läuft einfach gerade aus, schlägt aber diagonal. Seine Zugweite beträgt 1 Feld, nur bei seinem ersten Zug von der eigenen Grunstellung aus, kann er zwei Felder weit laufen." textAlignment="CENTER" wrappingWidth="254.513671875" />
+      <ImageView fitHeight="286.0" fitWidth="235.0" layoutX="14.0" layoutY="151.0">
+         <image>
+            <Image url="@../bilder/bauertutorial.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="264.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Position:" underline="true" wrappingWidth="75.21875" />
+      <Text layoutX="264.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwarz: a7, b7, c7, e7, f7, g7, h7" wrappingWidth="144.435546875" />
+      <Text layoutX="264.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weiß: a2, b2, c2, d2, e2, f2, g2, h2" wrappingWidth="144.435546875" />
+   </children>
+</AnchorPane>

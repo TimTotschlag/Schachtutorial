@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="151.0" layoutY="14.0" text="Der König" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="76.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Der König kann auf jedes benachbarte Feld ziehen, darf aber nie einen Zug machen, bei welchem er direkt durch den Gegner angegriffen wird. Es handelt sich hierbei um die zentrale Figur des Spiels. Wenn der eigene König fällt, ist das Spiel verloren. Er deckt durch seine Zugmöglichkeiten 8 Felder ab." textAlignment="CENTER" wrappingWidth="259.740234375" />
+      <Text layoutX="274.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Position:" underline="true" wrappingWidth="75.21875" />
+      <Text layoutX="274.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwarz: e8" wrappingWidth="144.435546875" />
+      <Text layoutX="274.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weiß: e1" wrappingWidth="144.435546875" />
+      <ImageView fitHeight="269.0" fitWidth="242.0" layoutX="14.0" layoutY="171.0">
+         <image>
+            <Image url="@../bilder/koenigtutorial.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

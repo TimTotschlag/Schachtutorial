@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="151.0" layoutY="14.0" text="Die Dame" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="76.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Dame ist die mächtigste Figur beim Schach. Sie kann vertikal, horizontal und diagonal soweit ziehen, bis sie den Spielfeldrand erreicht oder auf eine gegnerische Figur stößt. Im Zentrum des Schachbretts kann eine Dame bis zu 27 Felder abdecken und somit mehr als alle anderen Schachfiguren." textAlignment="CENTER" wrappingWidth="259.740234375" />
+      <Text layoutX="274.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Position:" underline="true" wrappingWidth="75.21875" />
+      <Text layoutX="274.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwarz: d8" wrappingWidth="144.435546875" />
+      <Text layoutX="274.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weiß: d1" wrappingWidth="144.435546875" />
+      <ImageView fitHeight="272.0" fitWidth="250.0" layoutX="14.0" layoutY="168.0">
+         <image>
+            <Image url="@../bilder/dametutorial.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
